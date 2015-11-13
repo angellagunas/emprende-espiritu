@@ -1,0 +1,336 @@
+{% extends "base.html" %}
+
+{% block title %}
+<title>Emprende tu espíritu - Blog</title>
+{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+    <!-- start option panel -->
+    <div id="switch">
+        <div class="content-switcher">
+            <p class="brand-text">Color Options:</p>
+            <ul class="header">
+                <li><a href="#" onclick="setActiveStyleSheet(&#39;color1&#39;); return false;" class="button color switch" style="background-color:#00bcd4"></a></li>
+                <li><a href="#" onclick="setActiveStyleSheet(&#39;color2&#39;); return false;" class="button color switch" style="background-color:#ff4081"></a></li>
+                <li><a href="#" onclick="setActiveStyleSheet(&#39;color3&#39;); return false;" class="button color switch" style="background-color:#C043D5"></a></li>
+                <li><a href="#" onclick="setActiveStyleSheet(&#39;color4&#39;); return false;" class="button color switch" style="background-color:#73D077"></a></li>
+                <li><a href="#" onclick="setActiveStyleSheet(&#39;color5&#39;); return false;" class="button color switch" style="background-color:#FE7448"></a></li>|
+                <li><a href="#" onclick="setActiveStyleSheet(&#39;color6&#39;); return false;" class="button color switch" style="background-color:#1ABBAC"></a></li>
+                <li><a href="#" onclick="setActiveStyleSheet(&#39;color7&#39;); return false;" class="button color switch" style="background-color:#EAB82E"></a></li>
+                <li><a href="#" onclick="setActiveStyleSheet(&#39;color8&#39;); return false;" class="button color switch" style="background-color:#799CAC"></a></li>
+            </ul>
+            <div id="hide">
+                <i class="fa fa-times"></i>
+            </div>
+        </div>
+    </div>
+    <div id="show" class="btn-floating waves-effect waves-light btn-large brand-text">
+        <i class="fa fa-cog"></i>
+    </div>
+    <!-- end option panel -->
+    <!-- Preloader --> 
+    <div id="preloader" style="display: none;">
+        <div class="loader" style="display: none;">
+            <svg class="circle-loader" height="50" width="50">
+                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="6" stroke-miterlimit="10"></circle>
+            </svg>
+        </div>
+    </div>
+    <!--preloader end-->
+    <div id="app">
+        <!-- header navigation -->
+        <header id="navigation" class="root-sec white nav">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="nav-inner">
+                            <nav class="primary-nav">
+                                <div class="clearfix nav-wrapper">
+                                    <a href="#!" class="left brand-logo"><img src="{% static 'images/logo.png' %}" alt="">
+                                    </a>
+                                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                                    <ul class="right static-menu">
+                                        <li class="search-form-li">
+                                            <a id="initSearchIcon" class=""><i class="mdi-action-search"></i> </a>
+                                            <div class="search-form-wrap hide">
+                                                <form action="#" class="">
+                                                    <input type="search" class="search">
+                                                    <button type="submit"><i class="mdi-action-search"></i>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-button blog-submenu-init" href="#!" data-activates="dropdown1">
+                                            <i class="mdi-navigation-more-vert right"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <ul class="inline-menu side-nav" id="mobile-demo">
+                                        <!-- Mini Profile // only visible in Tab and Mobile -->
+                                        <li class="mobile-profile">
+                                            <div class="profile-inner">
+                                                <div class="pp-container">
+                                                    <img src="{% static 'images/person.jpg' %}" alt="">
+                                                </div>
+                                                <h3>John Doe</h3>
+                                                <h5>Creative UI/UX Expert</h5>
+                                            </div>
+                                        </li>
+                                        <!-- mini profile end-->
+                                        <li><a href="http://www.bdinfosys.com/demo/materialx/index.html"><i class="fa fa-home fa-fw"></i>Home</a>
+                                        </li>
+                                        <li><a href="http://www.bdinfosys.com/demo/materialx/blog-with-sidebar.html"><i class="fa fa-pencil fa-fw"></i>Blog with Sidebar</a>
+                                        </li>
+                                        <li><a href="./blog_files/blog.html"><i class="fa fa-pencil fa-fw"></i>Blog Full width</a>
+                                        </li>
+                                        <li><a href="{% url 'vista_entrada' %}"><i class="fa fa-pencil fa-fw"></i>Single Blog</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- header navigation end -->
+        <!-- Banner start -->
+        <section id="banner" class="root-sec brand-bg padd-tb-73 blogpage-banner-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="clearfix blog-banner-text">
+                        <div class="col-sm-8 col-md-8 col-lg-8">
+                            <h2 class="title">BLOG</h2>
+                            <p class="regular-text">A Web page that serves as a publicly accessible personal journal for an individual. Typically updated daily, blogs often reflect the personality of the author.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--./Banner end-->
+        <!-- Blog Post Container-->
+        <section class="bottom-50 root-sec grey lighten-5 blogpage-posts-wrap">
+            <div class="container">
+                <div class="row">
+                    <div id="blog-posts" class="clearfix all-blog-post blog-inner without-sidebar" style="position: relative; height: 1453.875px;">
+                        <article class="col-sm-4 single-card-box single-post" style="position: absolute; left: 0px; top: 0px;">
+                            <div class="card">
+                                <div class="card-image">
+                                    <div class="card-img-wrap">
+                                        <div class="blog-post-thumb waves-effect waves-block waves-light">
+                                            <a href="{% url 'vista_entrada' %}"><img class="activator" src="{% static 'images/blog1.jpg' %}" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="post-body">
+                                            <a href="{% url 'vista_entrada' %}" class="post-title-link brand-text">
+                                                <h2 class="post-title">The Image Post</h2>
+                                            </a>
+                                            <p class="post-content">In consectetuer turpis ut velit. Sed lectus. Ut varius tincidunt libero. Vivamus euismod mauris. Vestibulum fringilla pede sit amet augue. Ut varius tincidunt libero. Pellentesque dapibus hendrerit tortor. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix card-content">
+                                    <a href="#" class="left js-favorite" title="Love this"><i class="mdi-action-favorite"></i><span class="numb">23</span></a>
+                                    <a href="{% url 'vista_entrada' %}" class="brand-text right waves-effect">read more</a>
+                                </div>
+                            </div>
+                        </article>
+
+                        <!--./single blog post-->
+                        <article class="col-sm-4 single-card-box single-post" style="position: absolute; left: 390px; top: 323px;">
+                            <div class="card">
+                                <div class="card-image">
+                                    <div class="card-img-wrap">
+                                        <div class="blog-post-thumb waves-effect waves-block waves-light">
+                                            <a href="{% url 'vista_entrada' %}"><img class="activator" src="{% static 'images/blog2.jpg' %}" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="post-body">
+                                            <a href="{% url 'vista_entrada' %}" class="post-title-link brand-text">
+                                                <h2 class="post-title">The Image Post</h2>
+                                            </a>
+                                            <p class="post-content">In consectetuer turpis ut velit. Sed lectus. Ut varius tincidunt libero. Vivamus euismod mauris. Vestibulum fringilla pede sit amet augue. Ut varius tincidunt libero. Pellentesque dapibus hendrerit tortor. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix card-content">
+                                    <a href="#" class="left js-favorite" title="Love this"><i class="mdi-action-favorite"></i><span class="numb">23</span></a>
+                                    <a href="{% url 'vista_entrada' %}" class="brand-text right waves-effect">read more</a>
+                                </div>
+                            </div>
+                        </article>
+                        <!--./single blog post-->
+                        <article class="col-sm-4 single-card-box single-post" style="position: absolute; left: 780px; top: 479px;">
+                            <div class="card">
+                                <div class="card-image">
+                                    <div class="card-img-wrap">
+                                        <div class="blog-post-thumb waves-effect waves-block waves-light">
+                                            <div class="thumb-slides-container owl-carousel owl-theme" style="opacity: 1; display: block;">
+                                                <div class="owl-wrapper-outer">
+                                                    <div class="owl-wrapper" style="width: 2100px; left: -700px; display: block;">
+                                                        <div class="owl-item" style="width: 350px;"><img class="activator" src="{% static 'images/blog3.jpg' %}" alt=""></div>
+                                                        <div class="owl-item" style="width: 350px;"><img class="activator" src="{% static 'images/blog2.jpg' %}" alt=""></div>
+                                                        <div class="owl-item" style="width: 350px;"><img class="activator" src="{% static 'images/blog1.jpg' %}" alt=""></div>
+                                                    </div>
+                                                </div>
+                                                <div class="owl-controls clickable">
+                                                    <div class="owl-pagination">
+                                                        <div class="owl-page"><span class=""></span></div>
+                                                        <div class="owl-page"><span class=""></span></div>
+                                                        <div class="owl-page active"><span class=""></span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="post-body">
+                                            <a href="{% url 'vista_entrada' %}" class="post-title-link brand-text">
+                                                <h2 class="post-title">The Image Slider Post</h2>
+                                            </a>
+                                            <p class="post-content">In consectetuer turpis ut velit. Sed lectus. Ut varius tincidunt libero. Vivamus euismod mauris. Vestibulum fringilla pede sit amet augue. Ut varius tincidunt libero. Pellentesque dapibus hendrerit tortor. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix card-content">
+                                    <a href="#" class="left js-favorite" title="Love this"><i class="mdi-action-favorite"></i><span class="numb">23</span></a>
+                                    <a href="{% url 'vista_entrada' %}" class="brand-text right waves-effect">read more</a>
+                                </div>
+                            </div>
+                        </article>
+                        <!--./single blog post-->
+                        <article class="col-sm-4 single-card-box single-post" style="position: absolute; left: 0px; top: 487px;">
+                            <div class="card">
+                                <div class="card-image">
+                                    <div class="card-img-wrap">
+                                        <div class="blog-post-thumb waves-effect waves-block waves-light">
+                                            <a href="{% url 'vista_entrada' %}"><img class="activator" src="{% static 'images/blog3.jpg' %}" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="post-body">
+                                            <a href="{% url 'vista_entrada' %}" class="post-title-link brand-text">
+                                                <h2 class="post-title">The Image Post</h2>
+                                            </a>
+                                            <p class="post-content">In consectetuer turpis ut velit. Sed lectus. Ut varius tincidunt libero. Vivamus euismod mauris. Vestibulum fringilla pede sit amet augue. Ut varius tincidunt libero. Pellentesque dapibus hendrerit tortor. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix card-content">
+                                    <a href="#" class="left js-favorite" title="Love this"><i class="mdi-action-favorite"></i><span class="numb">23</span></a>
+                                    <a href="{% url 'vista_entrada' %}" class="brand-text right waves-effect">read more</a>
+                                </div>
+                            </div>
+                        </article>
+                        <!--./single blog post-->
+                        <article class="col-sm-4 single-card-box single-post" style="position: absolute; left: 390px; top: 810px;">
+                            <div class="card">
+                                <div class="card-image">
+                                    <div class="card-img-wrap">
+                                        <div class="blog-post-thumb waves-effect waves-block waves-light">
+                                            <div class="thumb-slides-container owl-carousel owl-theme" style="opacity: 1; display: block;">
+                                                <div class="owl-wrapper-outer">
+                                                    <div class="owl-wrapper" style="width: 2100px; left: 0px; display: block;">
+                                                        <div class="owl-item" style="width: 350px;"><img class="activator" src="{% static 'images/blog2.jpg' %}" alt=""></div>
+                                                        <div class="owl-item" style="width: 350px;"><img class="activator" src="{% static 'images/blog1.jpg' %}" alt=""></div>
+                                                        <div class="owl-item" style="width: 350px;"><img class="activator" src="{% static 'images/blog3.jpg' %}" alt=""></div>
+                                                    </div>
+                                                </div>
+                                                <div class="owl-controls clickable">
+                                                    <div class="owl-pagination">
+                                                        <div class="owl-page active"><span class=""></span></div>
+                                                        <div class="owl-page"><span class=""></span></div>
+                                                        <div class="owl-page"><span class=""></span></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="post-body">
+                                            <a href="{% url 'vista_entrada' %}" class="post-title-link brand-text">
+                                                <h2 class="post-title">The Image Slider Post</h2>
+                                            </a>
+                                            <p class="post-content">In consectetuer turpis ut velit. Sed lectus. Ut varius tincidunt libero. Vivamus euismod mauris. Vestibulum fringilla pede sit amet augue. Ut varius tincidunt libero. Pellentesque dapibus hendrerit tortor. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix card-content">
+                                    <a href="#" class="left js-favorite" title="Love this"><i class="mdi-action-favorite"></i><span class="numb">23</span></a>
+                                    <a href="{% url 'vista_entrada' %}" class="brand-text right waves-effect">read more</a>
+                                </div>
+                            </div>
+                        </article>
+
+
+
+                        <!--./single blog post-->
+                        <article class="col-sm-4 single-card-box single-post" style="position: absolute; left: 0px; top: 974px;">
+                            <div class="card">
+                                <div class="card-image">
+                                    <div class="card-img-wrap">
+                                        <div class="blog-post-thumb videoPost">
+                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/hQfNtnKm5nA" frameborder="0" allowfullscreen></iframe>
+                                        </div>
+                                        <div class="post-body">
+                                            <a href="{% url 'vista_entrada' %}" class="post-title-link brand-text">
+                                                <h2 class="post-title">The YouTube Video Post</h2>
+                                            </a>
+                                            <p class="post-content">In consectetuer turpis ut velit. Sed lectus. Ut varius tincidunt libero. Vivamus euismod mauris. Vestibulum fringilla pede sit amet augue. Ut varius tincidunt libero. Pellentesque dapibus hendrerit tortor. </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="clearfix card-content">
+                                    <a href="#" class="left js-favorite" title="Love this"><i class="mdi-action-favorite"></i><span class="numb">23</span></a>
+                                    <a href="{% url 'vista_entrada' %}" class="brand-text right waves-effect">read more</a>
+                                </div>
+                            </div>
+                        </article>
+                        <!--./single blog post-->
+                    </div>
+                </div>
+            </div>
+            <!--./container end-->
+        </section>
+        <!-- ./Blog Post Container end-->
+    </div>
+    <!--#app end-->
+    <!-- JavaScripts -->
+    <div class="material-tooltip">
+        <span>Facebook</span>
+        <div class="backdrop" style="top: 0px; left: 0px;"></div>
+    </div>
+    <div class="material-tooltip">
+        <span>Linkdin</span>
+        <div class="backdrop" style="top: 0px; left: 0px;"></div>
+    </div>
+    <div class="material-tooltip">
+        <span>Twitter</span>
+        <div class="backdrop" style="top: 0px; left: 0px;"></div>
+    </div>
+    <div class="material-tooltip">
+        <span>Google Plus</span>
+        <div class="backdrop" style="top: 0px; left: 0px;"></div>
+    </div>
+    <div class="material-tooltip">
+        <span>Dribbble</span>
+        <div class="backdrop" style="top: 0px; left: 0px;"></div>
+    </div>
+    <div class="material-tooltip">
+        <span>Behance</span>
+        <div class="backdrop" style="top: 0px; left: 0px;"></div>
+    </div>
+    <div class="hiddendiv common"></div>
+    <ul id="dropdown1" class="inline-menu submenu-ul dropdown-content">
+        <li><a href="#">Demo link 1</a>
+        </li>
+        <li><a href="#">Demo link 2</a>
+        </li>
+        <li><a href="#">Demo link 3</a>
+        </li>
+    </ul>
+    <div class="drag-target" style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
+    <div id="ascrail2000" class="nicescroll-rails" style="width: 9px; z-index: 9999999; cursor: default; position: fixed; top: 0px; height: 100%; right: 0px; opacity: 0;">
+        <div style="position: relative; top: 0px; float: right; width: 7px; height: 231px; border: 1px solid rgb(255, 255, 255); border-radius: 5px; background-color: rgb(66, 66, 66); background-clip: padding-box;"></div>
+    </div>
+    <div id="ascrail2000-hr" class="nicescroll-rails" style="height: 9px; z-index: 9999999; position: fixed; left: 0px; width: 100%; bottom: 0px; cursor: default; display: none; opacity: 0;">
+        <div style="position: relative; top: 0px; height: 7px; width: 1360px; border: 1px solid rgb(255, 255, 255); border-radius: 5px; background-color: rgb(66, 66, 66); background-clip: padding-box;"></div>
+    </div>
+{% endblock %}
