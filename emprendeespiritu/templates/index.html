@@ -8,8 +8,8 @@
 {% block content %}
 {% load staticfiles %}
         <!-- Preloader --> 
-        <div id="preloader" style="display: none;">
-            <div class="loader" style="display: none;">
+        <div id="preloader">
+            <div class="loader">
                 <svg class="circle-loader" height="50" width="50">
                     <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="6" stroke-miterlimit="10"></circle>
                 </svg>
@@ -58,7 +58,11 @@
                                                 </div>
                                             </li>
                                             <!-- mini profile end-->
-                                            <li class=""><a href="#about" data-section="#about" class="menu-smooth-scroll"><i class="fa fa-user fa-fw"></i>Acerca de Mí</a>
+                                            <li class="">
+                                                <a href="#about" data-section="#about" class="menu-smooth-scroll">
+                                                    <i class="fa fa-user fa-fw">
+                                                    </i>Acerca de Mí
+                                                </a>
                                             </li>
                                             <li class=""><a href="#portfolio" data-section="#portfolio" class="menu-smooth-scroll"><i class="fa fa-briefcase fa-fw"></i>Portafolio</a>
                                             </li>
@@ -176,29 +180,35 @@
             <!-- Resume Section start -->
             <section id="resume" class="scroll-section ">
                 <section id="education" class="root-sec grey lighten-5 padd-tb-120 education-wrap">
+                    <div class="padd-tb-120 brand-bg portfolio-top" style="margin-bottom: 10px;">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <h2 class="title">Galeria</h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- .container end -->
+                    </div>
                     <div class="container">
                         <div class="row">
                             <div class="education-inner">
                                 <div class="col-sm-12 col-md-10 card-box-wrap">
                                     <div class="row">
-                                        <div class="clearfix section-head education-text">
-                                            <div class="col-sm-12">
-                                                <h2 class="title">Galería</h2>
-                                                <p class="regular-text">Aliquam lobortis. Maecenas vestibulum mollis diam. Pellentesque auctor neque nec urna. Nulla sit amet est. Aenean posuere tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.</p>
-                                            </div>
-                                        </div>
                                         <div class="col-lg-12">
                                             <div class="overflow-hidden">
                                                 <div class="row">
                                                     <div id="educationSlider" class="clearfix card-element-wrapper owl-carousel owl-theme" style="opacity: 1; display: block;">
                                                         <!-- single education -->
+                                                        
+                                                        {% for i in "123456" %}
                                                         <div class="owl-wrapper-outer">
                                                             <div class="owl-wrapper" style="width: 2600px; left: 0px; display: block; -webkit-transition: all 0ms ease; transition: all 0ms ease;">
                                                                 <div class="owl-item" style="width: 325px;">
                                                                     <div class="col-sm-4 single-card-box wow fadeInUpSmall animated" data-wow-duration=".7s" style="visibility: visible; -webkit-animation-duration: 0.7s;">
                                                                         <div class="card">
                                                                             <div class="card-image waves-effect waves-block waves-light">
-                                                                                <h2 class="left-align card-title-top">20011 - 2012</h2>
+                                                                                <h2 class="left-align card-title-top">2011 - {{ i }}</h2>
                                                                                 <div class="card-img-wrap">
                                                                                     <img class="activator" src="{% static 'images/grad-cap.png' %}" alt="">
                                                                                 </div>
@@ -297,12 +307,9 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        {% endfor%}
                                                         <!-- single education end -->
-                                                        <!-- single education -->
-                                                        <!-- single education -->
-                                                        <!-- single education -->
-                                                        <!-- single education -->
-                                                        <!-- single education -->
+                                                        <!-- end education -->
                                                         <!-- single education -->
                                                     </div>
                                                 </div>
@@ -329,11 +336,19 @@
                                 <div class="col-sm-12">
                                     <h2 class="title">PORTAFOLIO</h2>
                                     <ul class="inline-menu clearfix portfolio-category" id="portfolio-msnry-sort">
+<<<<<<< HEAD
                                         </li>
                                         <li><a href="#" data-target=".category-1">Servicios y productos</a>
                                         </li>
                                         <li><a href="#" data-target=".category-2">Talleres</a>
                                         </li>
+=======
+                                        </li>
+                                        <li><a href="#" data-target=".category-1">Servicios y productos</a>
+                                        </li>
+                                        <li><a href="#" data-target=".category-2">Talleres</a>
+                                        </li>
+>>>>>>> development
                                         <li><a href="#" data-target=".category-3">Cursos</a>
                                         </li>
                                     </ul>
@@ -980,6 +995,7 @@
                     </div>
                 </div>
             </section>
+            {% include 'footer.html' %}
         </main>
         <!-- Main Container end-->
         <!-- JavaScripts -->
