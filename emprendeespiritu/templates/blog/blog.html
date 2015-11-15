@@ -6,32 +6,9 @@
 
 {% block content %}
 {% load staticfiles %}
-    <!-- start option panel -->
-    <div id="switch">
-        <div class="content-switcher">
-            <p class="brand-text">Color Options:</p>
-            <ul class="header">
-                <li><a href="#" onclick="setActiveStyleSheet(&#39;color1&#39;); return false;" class="button color switch" style="background-color:#00bcd4"></a></li>
-                <li><a href="#" onclick="setActiveStyleSheet(&#39;color2&#39;); return false;" class="button color switch" style="background-color:#ff4081"></a></li>
-                <li><a href="#" onclick="setActiveStyleSheet(&#39;color3&#39;); return false;" class="button color switch" style="background-color:#C043D5"></a></li>
-                <li><a href="#" onclick="setActiveStyleSheet(&#39;color4&#39;); return false;" class="button color switch" style="background-color:#73D077"></a></li>
-                <li><a href="#" onclick="setActiveStyleSheet(&#39;color5&#39;); return false;" class="button color switch" style="background-color:#FE7448"></a></li>|
-                <li><a href="#" onclick="setActiveStyleSheet(&#39;color6&#39;); return false;" class="button color switch" style="background-color:#1ABBAC"></a></li>
-                <li><a href="#" onclick="setActiveStyleSheet(&#39;color7&#39;); return false;" class="button color switch" style="background-color:#EAB82E"></a></li>
-                <li><a href="#" onclick="setActiveStyleSheet(&#39;color8&#39;); return false;" class="button color switch" style="background-color:#799CAC"></a></li>
-            </ul>
-            <div id="hide">
-                <i class="fa fa-times"></i>
-            </div>
-        </div>
-    </div>
-    <div id="show" class="btn-floating waves-effect waves-light btn-large brand-text">
-        <i class="fa fa-cog"></i>
-    </div>
-    <!-- end option panel -->
     <!-- Preloader --> 
-    <div id="preloader" style="display: none;">
-        <div class="loader" style="display: none;">
+    <div id="preloader">
+        <div class="loader">
             <svg class="circle-loader" height="50" width="50">
                 <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="6" stroke-miterlimit="10"></circle>
             </svg>
@@ -79,11 +56,11 @@
                                             </div>
                                         </li>
                                         <!-- mini profile end-->
-                                        <li><a href="http://www.bdinfosys.com/demo/materialx/index.html"><i class="fa fa-home fa-fw"></i>Home</a>
+                                        <li><a href="{% url 'vista_principal' %}"><i class="fa fa-home fa-fw"></i>Home</a>
                                         </li>
-                                        <li><a href="http://www.bdinfosys.com/demo/materialx/blog-with-sidebar.html"><i class="fa fa-pencil fa-fw"></i>Blog with Sidebar</a>
+                                        <li><a href="{% url 'vista_blog' %}"><i class="fa fa-pencil fa-fw"></i>Blog with Sidebar</a>
                                         </li>
-                                        <li><a href="./blog_files/blog.html"><i class="fa fa-pencil fa-fw"></i>Blog Full width</a>
+                                        <li><a href="{% url 'vista_blog' %}"><i class="fa fa-pencil fa-fw"></i>Blog Full width</a>
                                         </li>
                                         <li><a href="{% url 'vista_entrada' %}"><i class="fa fa-pencil fa-fw"></i>Single Blog</a>
                                         </li>
@@ -290,6 +267,7 @@
             <!--./container end-->
         </section>
         <!-- ./Blog Post Container end-->
+        {% include 'footer.html' %}
     </div>
     <!--#app end-->
     <!-- JavaScripts -->

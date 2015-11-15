@@ -37,6 +37,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'compressor',
     'emprendeespiritu.app.perfil',
     'emprendeespiritu.app.blog',
 )
@@ -50,6 +51,10 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+)
+
+STATICFILES_FINDERS = (
+    'compressor.finders.CompressorFinder',
 )
 
 ROOT_URLCONF = 'emprendeespiritu.urls'
@@ -112,3 +117,7 @@ STATIC_URL = '/media/assets/'
 STATICFILES_DIRS = (
     os.path.realpath(os.path.join(BASE_DIR, 'media','assets')),
 )
+
+COMPRESS_ROOT = os.path.realpath(os.path.join(BASE_DIR, 'media','assets'))
+
+COMPRESS_ENABLED = True

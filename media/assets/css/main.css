@@ -413,8 +413,8 @@ header.nav.hide-menu {
 }
 
 .primary-nav .brand-logo img {
-  height: 32px;
-  margin: 25px 5px 0;
+  height: 64px;
+  margin: 2px 1px 0;
 }
 
 .mobile-profile{
@@ -584,7 +584,7 @@ header.nav.hide-menu {
 }
 
 #home .sec-overlay {
-    background: rgba(0,0,0, .7);
+    background: rgba(0,0,0, .5);
     width: 100%;
     height: 100%;
 }
