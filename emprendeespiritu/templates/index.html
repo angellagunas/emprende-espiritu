@@ -7,43 +7,6 @@
 
 {% block content %}
 {% load staticfiles %}
-
-        <!-- start option panel -->
-        <div id="switch" style="margin-right: -300px; display: none;">
-            <div class="content-switcher">
-                <p class="brand-text">Color Options:</p>
-                <ul class="header">
-                    <li><a href="#" onclick="setActiveStyleSheet(&#39;color1&#39;); return false;" class="button color switch" style="background-color:#00bcd4"></a></li>
-                    <li><a href="#" onclick="setActiveStyleSheet(&#39;color2&#39;); return false;" class="button color switch" style="background-color:#ff4081"></a></li>
-                    <li><a href="#" onclick="setActiveStyleSheet(&#39;color3&#39;); return false;" class="button color switch" style="background-color:#C043D5"></a></li>
-                    <li><a href="#" onclick="setActiveStyleSheet(&#39;color4&#39;); return false;" class="button color switch" style="background-color:#73D077"></a></li>
-                    <li><a href="#" onclick="setActiveStyleSheet(&#39;color5&#39;); return false;" class="button color switch" style="background-color:#FE7448"></a></li>
-                    <li><a href="#" onclick="setActiveStyleSheet(&#39;color6&#39;); return false;" class="button color switch" style="background-color:#1ABBAC"></a></li>
-                    <li><a href="#" onclick="setActiveStyleSheet(&#39;color7&#39;); return false;" class="button color switch" style="background-color:#EAB82E"></a></li>
-                    <li><a href="#" onclick="setActiveStyleSheet(&#39;color8&#39;); return false;" class="button color switch" style="background-color:#799CAC"></a></li>
-                </ul>
-                <p class="brand-text">Menu Options:</p>
-                <div class="menu-select" title="The menu will display in all devices">
-                    <input type="radio" id="menu1" name="intelligent-menu">
-                    <label for="menu1">Fixed</label>
-                </div>
-                <div class="menu-select" title="The menu will display or hide in all devices depending on scroll">
-                    <input type="radio" id="menu2" name="intelligent-menu" checked="checked">
-                    <label for="menu2">Intelligent ( Auto Hide )</label>
-                </div>
-                <div class="menu-select" title="Fixed menu will apply in non-mobile devices and Intelligent menu will apply in mobile devices">
-                    <input type="radio" id="menu3" name="intelligent-menu">
-                    <label for="menu3">Mobile Intelligent</label>
-                </div>
-                <div id="hide">
-                    <i class="fa fa-times"></i>
-                </div>
-            </div>
-        </div>
-        <div id="show" class="btn-floating waves-effect waves-light btn-large brand-text" style="margin-right: 0px; display: block;">
-            <i class="fa fa-cog"></i>
-        </div>
-        <!-- end option panel -->
         <!-- Preloader --> 
         <div id="preloader" style="display: none;">
             <div class="loader" style="display: none;">
@@ -90,24 +53,22 @@
                                                     <div class="pp-container">
                                                         <img src="{% static 'images/person.jpg' %}" alt="">
                                                     </div>
-                                                    <h3>John Doe</h3>
-                                                    <h5>Creative UI/UX Expert</h5>
+                                                    <h3>Benjamín Sánchez</h3>
+                                                    <h5>Ponente y entusiasta</h5>
                                                 </div>
                                             </li>
                                             <!-- mini profile end-->
-                                            <li class=""><a href="#about" data-section="#about" class="menu-smooth-scroll"><i class="fa fa-user fa-fw"></i>About Me</a>
+                                            <li class=""><a href="#about" data-section="#about" class="menu-smooth-scroll"><i class="fa fa-user fa-fw"></i>Acerca de Mí</a>
                                             </li>
-                                            <li class=""><a href="#resume" data-section="#resume" class="menu-smooth-scroll"><i class="fa fa-file-text fa-fw"></i>Resume</a>
+                                            <li class=""><a href="#portfolio" data-section="#portfolio" class="menu-smooth-scroll"><i class="fa fa-briefcase fa-fw"></i>Portafolio</a>
                                             </li>
-                                            <li class=""><a href="#portfolio" data-section="#portfolio" class="menu-smooth-scroll"><i class="fa fa-briefcase fa-fw"></i>Portfolio</a>
+                                            <li class=""><a href="#team" data-section="#team" class="menu-smooth-scroll"><i class="fa fa-users fa-fw"></i>Nosotros</a>
                                             </li>
-                                            <li class=""><a href="#team" data-section="#team" class="menu-smooth-scroll"><i class="fa fa-users fa-fw"></i>Team</a>
-                                            </li>
-                                            <li class=""><a href="#testimonial" data-section="#testimonial" class="menu-smooth-scroll"><i class="fa fa-comments fa-fw"></i>Testimonial</a>
+                                            <li class=""><a href="#testimonial" data-section="#testimonial" class="menu-smooth-scroll"><i class="fa fa-comments fa-fw"></i>Comentarios</a>
                                             </li>
                                             <li class=""><a href="#blog" data-section="#blog" class="menu-smooth-scroll"><i class="fa fa-pencil fa-fw"></i>Blog</a>
                                             </li>
-                                            <li class=""><a href="./MaterialX - Material Design Personal Template_files/MaterialX - Material Design Personal Template.html" data-section="#contact" class="menu-smooth-scroll"><i class="fa fa-paper-plane fa-fw"></i>Contact</a>
+                                            <li class=""><a href="./MaterialX - Material Design Personal Template_files/MaterialX - Material Design Personal Template.html" data-section="#contact" class="menu-smooth-scroll"><i class="fa fa-paper-plane fa-fw"></i>Contacto</a>
                                             </li>
                                         </ul>
                                     </div>
@@ -127,9 +88,9 @@
                             <div class="col-sm-12">
                                 <div class="home-inner">
                                     <div class="center-align home-content">
-                                        <h1 class="home-title">HI! I'm <span>John Doe</span></h1>
-                                        <h2 class="home-subtitle">UX/UI Designer from Dhaka, Bangladesh</h2>
-                                        <a href="./MaterialX - Material Design Personal Template_files/MaterialX - Material Design Personal Template.html" class="hire-me-btn btn waves-effect waves-light btn-large brand-bg white-text regular-text">Hire Me <i class="mdi-content-send left"></i>
+                                        <h1 class="home-title">Emprende <span>tu espíritu</span></h1>
+                                        <h2 class="home-subtitle">Cursos y talleres de superación personal y profesional</h2>
+                                        <a href="./MaterialX - Material Design Personal Template_files/MaterialX - Material Design Personal Template.html" class="hire-me-btn btn waves-effect waves-light btn-large brand-bg white-text regular-text">Suscribirme <i class="mdi-content-send left"></i>
                                         </a>
                                     </div>
                                 </div>
@@ -157,11 +118,12 @@
                         <div class="clearfix about-inner">
                             <div class="col-sm-12 col-md-4">
                                 <div class="person-about">
-                                    <h3 class="about-subtitle">My Story</h3>
-                                    <p>Hello, I’m a UI/UX Designer &amp; Front End Developer from Victoria, Australia. I hold a master degree of Web Design from the World University. <br>
-                                        And scrambled it to make a type specimen book. It has survived not only five centuries
+                                    <h3 class="about-subtitle">¿Quién soy?</h3>
+                                    <p>
+                                        Hola, yo soy un profesional &amp; apasionado en Física aplicada del estado de Morelos, México. Tengo una maestría en Humanidades en la Universidad Autónoma del Estado de Morelos. <br>
+                                        He impartido cursos para empresarios, emprendedores y lideres en distintas áreas para ayudar a encontrarse a si mismos y alcanzar una vida equilibrada.
                                     </p>
-                                    <a class="waves-effect waves-light btn-large brand-bg white-text"><i class="mdi-content-archive left"></i> Download Resume</a>
+                                    <a href="#contact" class="waves-effect waves-light btn-large brand-bg white-text"><i class="mdi-content-archive left"></i> Enviar mensaje</a>
                                 </div>
                             </div>
                             <!-- about me description -->
@@ -173,29 +135,23 @@
                             <!-- about me image -->
                             <div class="col-sm-6 col-md-4">
                                 <div class="person-info">
-                                    <h3 class="about-subtitle">Personal Information</h3>
-                                    <h5><span>Name :</span> John Doe</h5>
-                                    <h5><span>Age :</span> 25 Years</h5>
-                                    <h5><span>Phone :</span> +0123456789</h5>
-                                    <h5><span>Email :</span> email@domain.com</h5>
-                                    <h5><span>Address :</span> Dhaka, Bangladesh</h5>
+                                    <h3 class="about-subtitle">Información Personal</h3>
+                                    <h5><span>Nombre :</span> Benjamín Sánchez</h5>
+                                    <h5><span>Edad :</span> 25 Años</h5>
+                                    <h5><span>Tel :</span> 0447771234567</h5>
+                                    <h5><span>Email :</span> Benjaminsg10_1@hotmail.com</h5>
+                                    <h5><span>Dirección :</span> Unidad Morelos, Xochitepec</h5>
                                 </div>
                                 <div class="about-social">
                                     <ul>
                                         <li>
-                                            <a href="#" class="btn-floating waves-effect waves-light white"><i class="fa fa-facebook"></i></a>
+                                            <a href="https://www.facebook.com/ben.morelos.7" target="_blank" class="btn-floating waves-effect waves-light white"><i class="fa fa-facebook"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#" class="btn-floating waves-effect waves-light white"><i class="fa fa-twitter"></i></a>
+                                            <a href="https://twitter.com/EmprenEspiritu" target="_blank" class="btn-floating waves-effect waves-light white"><i class="fa fa-twitter"></i></a>
                                         </li>
                                         <li>
-                                            <a href="#" class="btn-floating waves-effect waves-light white"><i class="fa fa-google-plus"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="btn-floating waves-effect waves-light white"><i class="fa fa-linkedin"></i></a>
-                                        </li>
-                                        <li>
-                                            <a href="#" class="btn-floating waves-effect waves-light white"><i class="fa fa-pinterest"></i></a>
+                                            <a href="https://plus.google.com/u/0/110101738131156739156" target="_blank" class="btn-floating waves-effect waves-light white"><i class="fa fa-google-plus"></i></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -207,391 +163,18 @@
                 <!-- .container end -->
             </section>
             <!-- #about Section end -->
+
+
+
+
+
+
+
+
+
+
             <!-- Resume Section start -->
             <section id="resume" class="scroll-section ">
-                <section id="skill" class="root-sec white skill-wrap">
-                    <div class="sec-overlay">
-                        <div class="container">
-                            <div class="row">
-                                <div class="clearfix skill-inner">
-                                    <div class="col-sm-12 col-md-3">
-                                        <div class="skill-left">
-                                            <h2 class="title">Skills</h2>
-                                            <p class="regular-text">Man behind the gun, any sophisticated weapons. Human remains that taking the role. We are experienced in utilizing all resources.</p>
-                                        </div>
-                                    </div>
-                                    <!-- skills container -->
-                                    <div class="col-sm-12 col-md-6 col-md-offset-1">
-                                        <div class="skill-right">
-                                            <div id="skillSlider" class="clearfix skill-graph owl-carousel owl-theme" style="opacity: 1; display: block;">
-                                                <!-- single skill -->
-                                                <div class="owl-wrapper-outer">
-                                                    <div class="owl-wrapper" style="width: 1860px; left: 0px; display: block; -webkit-transition: all 0ms ease; transition: all 0ms ease;">
-                                                        <div class="owl-item" style="width: 93px;">
-                                                            <div class="single-skill">
-                                                                <div class="after-li">
-                                                                    <div class="singel-hr">
-                                                                        <div class="singel-hr-inner" data-height="100%" style="height: 100%;">
-                                                                            <div class="skill-visiable">
-                                                                                <span class="skill-title">Photoshop</span>
-                                                                                <div class="hr-wrap">
-                                                                                    <div class="hrc"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <span class="skill-count">100%</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="owl-item" style="width: 93px;">
-                                                            <div class="single-skill">
-                                                                <div class="after-li">
-                                                                    <div class="singel-hr">
-                                                                        <div class="singel-hr-inner" data-height="60%" style="height: 60%;">
-                                                                            <div class="skill-visiable">
-                                                                                <span class="skill-title">JavaScript</span>
-                                                                                <div class="hr-wrap">
-                                                                                    <div class="hrc"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <span class="skill-count">60%</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="owl-item" style="width: 93px;">
-                                                            <div class="single-skill">
-                                                                <div class="after-li">
-                                                                    <div class="singel-hr">
-                                                                        <div class="singel-hr-inner" data-height="85%" style="height: 85%;">
-                                                                            <div class="skill-visiable">
-                                                                                <span class="skill-title">Illustrator</span>
-                                                                                <div class="hr-wrap">
-                                                                                    <div class="hrc"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <span class="skill-count">85%</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="owl-item" style="width: 93px;">
-                                                            <div class="single-skill">
-                                                                <div class="after-li">
-                                                                    <div class="singel-hr">
-                                                                        <div class="singel-hr-inner" data-height="65%" style="height: 65%;">
-                                                                            <div class="skill-visiable">
-                                                                                <span class="skill-title">HTML</span>
-                                                                                <div class="hr-wrap">
-                                                                                    <div class="hrc"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <span class="skill-count">65%</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="owl-item" style="width: 93px;">
-                                                            <div class="single-skill">
-                                                                <div class="after-li">
-                                                                    <div class="singel-hr">
-                                                                        <div class="singel-hr-inner" data-height="60%" style="height: 60%;">
-                                                                            <div class="skill-visiable">
-                                                                                <span class="skill-title">JavaScript</span>
-                                                                                <div class="hr-wrap">
-                                                                                    <div class="hrc"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <span class="skill-count">60%</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="owl-item" style="width: 93px;">
-                                                            <div class="single-skill">
-                                                                <div class="after-li">
-                                                                    <div class="singel-hr">
-                                                                        <div class="singel-hr-inner" data-height="35%" style="height: 35%;">
-                                                                            <div class="skill-visiable">
-                                                                                <span class="skill-title">CSS</span>
-                                                                                <div class="hr-wrap">
-                                                                                    <div class="hrc"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <span class="skill-count">35%</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="owl-item" style="width: 93px;">
-                                                            <div class="single-skill">
-                                                                <div class="after-li">
-                                                                    <div class="singel-hr">
-                                                                        <div class="singel-hr-inner" data-height="85%" style="height: 85%;">
-                                                                            <div class="skill-visiable">
-                                                                                <span class="skill-title">Illustrator</span>
-                                                                                <div class="hr-wrap">
-                                                                                    <div class="hrc"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <span class="skill-count">85%</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="owl-item" style="width: 93px;">
-                                                            <div class="single-skill">
-                                                                <div class="after-li">
-                                                                    <div class="singel-hr">
-                                                                        <div class="singel-hr-inner" data-height="60%" style="height: 60%;">
-                                                                            <div class="skill-visiable">
-                                                                                <span class="skill-title">Wordpress</span>
-                                                                                <div class="hr-wrap">
-                                                                                    <div class="hrc"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <span class="skill-count">60%</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="owl-item" style="width: 93px;">
-                                                            <div class="single-skill">
-                                                                <div class="after-li">
-                                                                    <div class="singel-hr">
-                                                                        <div class="singel-hr-inner" data-height="85%" style="height: 85%;">
-                                                                            <div class="skill-visiable">
-                                                                                <span class="skill-title">Illustrator</span>
-                                                                                <div class="hr-wrap">
-                                                                                    <div class="hrc"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <span class="skill-count">85%</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="owl-item" style="width: 93px;">
-                                                            <div class="single-skill">
-                                                                <div class="after-li">
-                                                                    <div class="singel-hr">
-                                                                        <div class="singel-hr-inner" data-height="60%" style="height: 60%;">
-                                                                            <div class="skill-visiable">
-                                                                                <span class="skill-title">JavaScript</span>
-                                                                                <div class="hr-wrap">
-                                                                                    <div class="hrc"></div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                        <span class="skill-count">60%</span>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <!-- /single skill-->
-                                                <!-- single skill -->
-                                                <!-- /single skill-->
-                                                <!-- single skill -->
-                                                <!-- /single skill-->
-                                                <!-- single skill -->
-                                                <!-- /single skill-->
-                                                <!-- single skill -->
-                                                <!-- /single skill-->
-                                                <!-- single skill -->
-                                                <!-- /single skill-->
-                                                <!-- single skill -->
-                                                <!-- /single skill-->
-                                                <!-- single skill -->
-                                                <!-- /single skill-->
-                                                <!-- single skill -->
-                                                <!-- /single skill-->
-                                                <!-- single skill -->
-                                                <!-- /single skill-->
-                                                <!-- single skill -->
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- /skills container -->
-                                </div>
-                            </div>
-                            <div class="btn-wrapp skl-ctrl">
-                                <a class="btn-floating waves-effect waves-light btn-large brand-bg white-text go go-left"><i class="mdi-navigation-chevron-left "></i></a>
-                                <a class="btn-floating waves-effect waves-light btn-large brand-bg white-text go go-right"><i class="mdi-navigation-chevron-right "></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- .container end -->
-                </section>
-                <section id="experience" class="root-sec padd-tb-120 brand-bg experience-wrap">
-                    <div class="container">
-                        <div class="row">
-                            <div class="experience-inner">
-                                <div class="col-sm-12 col-md-10 card-box-wrap">
-                                    <div class="row">
-                                        <div class="clearfix section-head experience-text">
-                                            <div class="col-sm-12">
-                                                <h2 class="title">Experience</h2>
-                                                <p class="regular-text">Aliquam lobortis. Maecenas vestibulum mollis diam. Pellentesque auctor neque nec urna. Nulla sit amet est. Aenean posuere tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.</p>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-12">
-                                            <div class="overflow-hidden">
-                                                <div class="row">
-                                                    <div id="experienceSlider" class="clearfix card-element-wrapper owl-carousel owl-theme" style="opacity: 1; display: block;">
-                                                        <div class="owl-wrapper-outer">
-                                                            <div class="owl-wrapper" style="width: 3250px; left: 0px; display: block; -webkit-transition: all 0ms ease; transition: all 0ms ease;">
-                                                                <div class="owl-item" style="width: 325px;">
-                                                                    <div class="col-sm-4 cold-xs-12 single-card-box wow fadeInUpSmall animated" data-wow-duration=".7s" style="visibility: visible; -webkit-animation-duration: 0.7s;">
-                                                                        <div class="card">
-                                                                            <div class="card-image waves-effect waves-block waves-light">
-                                                                                <h2 class="left-align card-title-top">January 2014 - Present</h2>
-                                                                                <div class="valign-wrapper card-img-wrap">
-                                                                                    <img class="activator" src="{% static 'images/ghost_rider.jpg' %}" alt="">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="card-content">
-                                                                                <span class="card-title activator brand-text">UX/UI Designer<i class="mdi-navigation-more-vert right"></i></span>
-                                                                                <p>Apple.inc</p>
-                                                                            </div>
-                                                                            <div class="card-reveal">
-                                                                                <div class="rev-title-wrap">
-                                                                                    <span class="card-title activator brand-text">UX/UI Designer<i class="mdi-navigation-close right"></i></span>
-                                                                                    <p>Apple.inc</p>
-                                                                                </div>
-                                                                                <p class="rev-content">
-                                                                                    Collaboratively initiate collaborative schemas for high-quality communities. Objectively create sticky relationships via team building outsourcing. 
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="owl-item" style="width: 325px;">
-                                                                    <div class="col-sm-4 cold-xs-12 single-card-box wow fadeInUpSmall animated" data-wow-delay=".2s" data-wow-duration=".7s" style="visibility: visible; -webkit-animation-duration: 0.7s; -webkit-animation-delay: 0.2s;">
-                                                                        <div class="card">
-                                                                            <div class="card-image waves-effect waves-block waves-light">
-                                                                                <h2 class="left-align card-title-top">January 2014 - Present</h2>
-                                                                                <div class="valign-wrapper card-img-wrap">
-                                                                                    <img class="activator" src="{% static 'images/lion.jpg' %}" alt="">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="card-content">
-                                                                                <span class="card-title activator brand-text">UX/UI Designer<i class="mdi-navigation-more-vert right"></i></span>
-                                                                                <p>Android One</p>
-                                                                            </div>
-                                                                            <div class="card-reveal">
-                                                                                <div class="rev-title-wrap">
-                                                                                    <span class="card-title activator brand-text">UX/UI Designer<i class="mdi-navigation-close right"></i></span>
-                                                                                    <p>Android One</p>
-                                                                                </div>
-                                                                                <p class="rev-content">
-                                                                                    Collaboratively initiate collaborative schemas for high-quality communities. Objectively create sticky relationships via team building outsourcing. 
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="owl-item" style="width: 325px;">
-                                                                    <div class="col-sm-4 cold-xs-12 single-card-box wow fadeInUpSmall animated" data-wow-delay=".4s" data-wow-duration=".7s" style="visibility: visible; -webkit-animation-duration: 0.7s; -webkit-animation-delay: 0.4s;">
-                                                                        <div class="card">
-                                                                            <div class="card-image waves-effect waves-block waves-light">
-                                                                                <h2 class="left-align card-title-top">January 2014 - Present</h2>
-                                                                                <div class="valign-wrapper card-img-wrap">
-                                                                                    <img class="activator" src="{% static 'images/bull.jpg' %}" alt="">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="card-content">
-                                                                                <span class="card-title activator brand-text">UX/UI Designer<i class="mdi-navigation-more-vert right"></i></span>
-                                                                                <p>Android One</p>
-                                                                            </div>
-                                                                            <div class="card-reveal">
-                                                                                <div class="rev-title-wrap">
-                                                                                    <span class="card-title activator brand-text">UX/UI Designer<i class="mdi-navigation-close right"></i></span>
-                                                                                    <p>Android One</p>
-                                                                                </div>
-                                                                                <p class="rev-content">
-                                                                                    Collaboratively initiate collaborative schemas for high-quality communities. Objectively create sticky relationships via team building outsourcing. 
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="owl-item" style="width: 325px;">
-                                                                    <div class="col-sm-4 cold-xs-12 single-card-box">
-                                                                        <div class="card">
-                                                                            <div class="card-image waves-effect waves-block waves-light">
-                                                                                <h2 class="left-align card-title-top">January 2014 - Present</h2>
-                                                                                <div class="valign-wrapper card-img-wrap">
-                                                                                    <img class="activator" src="{% static 'images/beakers.jpg' %}" alt="">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="card-content">
-                                                                                <span class="card-title activator brand-text">UX/UI Designer<i class="mdi-navigation-more-vert right"></i></span>
-                                                                                <p>Windows Phone</p>
-                                                                            </div>
-                                                                            <div class="card-reveal">
-                                                                                <div class="rev-title-wrap">
-                                                                                    <span class="card-title activator brand-text">UX/UI Designer<i class="mdi-navigation-close right"></i></span>
-                                                                                    <p>Windows Phone</p>
-                                                                                </div>
-                                                                                <p class="rev-content">
-                                                                                    Collaboratively initiate collaborative schemas for high-quality communities. Objectively create sticky relationships via team building outsourcing. 
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="owl-item" style="width: 325px;">
-                                                                    <div class="col-sm-4 cold-xs-12 single-card-box">
-                                                                        <div class="card">
-                                                                            <div class="card-image waves-effect waves-block waves-light">
-                                                                                <h2 class="left-align card-title-top">January 2014 - Present</h2>
-                                                                                <div class="valign-wrapper card-img-wrap">
-                                                                                    <img class="activator" src="{% static 'images/kid.jpg' %}" alt="">
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="card-content">
-                                                                                <span class="card-title activator brand-text">UX/UI Designer<i class="mdi-navigation-more-vert right"></i></span>
-                                                                                <p>Windows Phone</p>
-                                                                            </div>
-                                                                            <div class="card-reveal">
-                                                                                <div class="rev-title-wrap">
-                                                                                    <span class="card-title activator brand-text">UX/UI Designer<i class="mdi-navigation-close right"></i></span>
-                                                                                    <p>Windows Phone</p>
-                                                                                </div>
-                                                                                <p class="rev-content">
-                                                                                    Collaboratively initiate collaborative schemas for high-quality communities. Objectively create sticky relationships via team building outsourcing. 
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="btn-wrapp exp-ctrl">
-                                    <a class="btn-floating waves-effect waves-light btn-large white go go-left"><i class="mdi-navigation-chevron-left brand-text"></i></a>
-                                    <a class="btn-floating waves-effect waves-light btn-large white go go-right"><i class="mdi-navigation-chevron-right brand-text"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
                 <section id="education" class="root-sec grey lighten-5 padd-tb-120 education-wrap">
                     <div class="container">
                         <div class="row">
@@ -600,7 +183,7 @@
                                     <div class="row">
                                         <div class="clearfix section-head education-text">
                                             <div class="col-sm-12">
-                                                <h2 class="title">education</h2>
+                                                <h2 class="title">Galería</h2>
                                                 <p class="regular-text">Aliquam lobortis. Maecenas vestibulum mollis diam. Pellentesque auctor neque nec urna. Nulla sit amet est. Aenean posuere tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.</p>
                                             </div>
                                         </div>
@@ -744,17 +327,14 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col-sm-12">
-                                    <h2 class="title">PORTFOLIO</h2>
+                                    <h2 class="title">PORTAFOLIO</h2>
                                     <ul class="inline-menu clearfix portfolio-category" id="portfolio-msnry-sort">
-                                        <li class="active"><a href="#" data-target="*">All</a>
                                         </li>
-                                        <li><a href="#" data-target=".category-1">Art</a>
+                                        <li><a href="#" data-target=".category-1">Servicios y productos</a>
                                         </li>
-                                        <li><a href="#" data-target=".category-2">Accessories</a>
+                                        <li><a href="#" data-target=".category-2">Talleres</a>
                                         </li>
-                                        <li><a href="#" data-target=".category-3">Design</a>
-                                        </li>
-                                        <li><a href="#" data-target=".category-4">Fashion</a>
+                                        <li><a href="#" data-target=".category-3">Cursos</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -855,21 +435,6 @@
                                         </a>
                                     </li>
                                     <!--/ single portfolio -->
-                                    <!-- Single Portfolio-->
-                                    <li class="single-port-item category-2 category-4" style="position: absolute; left: 759px; top: 274px;">
-                                        <a href="#portfolioModal" class="waves-effect waves-block waves-light modal-trigger" data-image-source="http://placehold.it/650x350" data-title="Your awesome portfolio title" data-content="A portfolio is a collection of documents and writing that you assemble in order to demonstrate that you have the appropriate prior." data-demo-link="#">
-                                            <div class="protfolio-image">
-                                                <img src="{% static 'images/pf6.jpg' %}" alt="portfolio">
-                                                <div class="protfolio-content waves-effect waves-block waves-light">
-                                                    <div class="protfolio-content__inner">
-                                                        <h2 class="p-title">item name</h2>
-                                                    </div>
-                                                </div>
-                                                <div class="p-overlay"></div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <!--/ single portfolio -->
                                 </ul>
                                 <!-- portfolio load more button-->
                                 <a id="portfolio-item-loader" href="#" class="btn-floating btn-large waves-effect waves-light brand-bg"><i class="mdi-content-add"></i></a>
@@ -907,13 +472,13 @@
                                                                             </div>
                                                                         </div>
                                                                         <div class="card-content">
-                                                                            <span class="card-title activator brand-text">Jonh Doe<i class="mdi-navigation-more-vert right"></i></span>
-                                                                            <p>UX UI Designer</p>
+                                                                            <span class="card-title activator brand-text">Benjamín Sánchez<i class="mdi-navigation-more-vert right"></i></span>
+                                                                            <p>Ponente y entusiasta</p>
                                                                         </div>
                                                                         <div class="card-reveal">
                                                                             <div class="rev-title-wrap">
-                                                                                <span class="card-title activator brand-text">Jonh Doe<i class="mdi-navigation-close right"></i></span>
-                                                                                <p>UX UI Designer</p>
+                                                                                <span class="card-title activator brand-text">Benjamín Sánchez<i class="mdi-navigation-close right"></i></span>
+                                                                                <p>Ponente y entusiasta</p>
                                                                             </div>
                                                                             <p class="rev-content">
                                                                                 Collaboratively initiate collaborative schemas for high-quality communities. Objectively create sticky relationships via team building outsourcing. 
@@ -1131,8 +696,8 @@
                                 <div class="row">
                                     <div class="clearfix section-head testimonial-text">
                                         <div class="col-sm-12">
-                                            <h2 class="title">testimonial</h2>
-                                            <p class="regular-text">Aliquam lobortis. Maecenas vestibulum mollis diam. Pellentesque auctor neque nec urna. Nulla sit amet est. Aenean posuere tortor sed cursus feugiat, nunc augue blandit nunc, eu sollicitudin urna dolor sagittis lacus.</p>
+                                            <h2 class="title">Comentarios</h2>
+                                            <p class="regular-text">Esto es lo que opinan los emprendedores, lideres y entusiastas acerca de los cursos y talleres recibido en Emprende tu espíritu©, déjanos un comentario acerca de tu experiencia.</p>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
@@ -1351,15 +916,13 @@
                                 <div class="row">
                                     <div class="clearfix section-head contact-text">
                                         <div class="col-sm-12">
-                                            <h2 class="title">Contact</h2>
-                                            <p class="regular-text">Collins Street West Victoria 8007 Australia</p>
+                                            <h2 class="title">Contacto</h2>
+                                            <p class="regular-text">U.H. José María Morelos y Pavón, Mor. 62790 México</p>
                                             <ul class="clearfix contact-info">
                                                 <li><a href="">+880 1234 567890</a>
                                                 </li>
-                                                <li><a href="">support@website.net</a>
-                                                </li>
-                                                <li><a href="">www.website.net</a>
-                                                </li>
+                                                <li><a href="">emprendetuespiritu@gmail.com</a>
+                                                </li>   
                                             </ul>
                                         </div>
                                     </div>
@@ -1368,109 +931,7 @@
                                         <!-- Map Start -->
                                         <div class="col-sm-7">
                                             <div class="map-wrapper">
-                                                <div id="map" style="position: relative; overflow: hidden; transform: translateZ(0px); background-color: rgb(229, 227, 223);">
-                                                    <div class="gm-style" style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0;">
-                                                        <div style="position: absolute; left: 0px; top: 0px; overflow: hidden; width: 100%; height: 100%; z-index: 0; cursor: url(https://maps.gstatic.com/mapfiles/openhand_8_8.cur) 8 8, default;">
-                                                            <div style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 0, 0);">
-                                                                <div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 100; width: 100%;">
-                                                                    <div style="position: absolute; left: 0px; top: 0px; z-index: 0;">
-                                                                        <div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;">
-                                                                            <div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: 218px; top: 203px;"></div>
-                                                                            <div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: -38px; top: 203px;"></div>
-                                                                            <div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: 218px; top: -53px;"></div>
-                                                                            <div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: 218px; top: 459px;"></div>
-                                                                            <div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: 474px; top: 203px;"></div>
-                                                                            <div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: -38px; top: -53px;"></div>
-                                                                            <div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: -38px; top: 459px;"></div>
-                                                                            <div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: 474px; top: -53px;"></div>
-                                                                            <div style="width: 256px; height: 256px; transform: translateZ(0px); position: absolute; left: 474px; top: 459px;"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 101; width: 100%;"></div>
-                                                                <div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 102; width: 100%;"></div>
-                                                                <div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 103; width: 100%;">
-                                                                    <div style="position: absolute; left: 0px; top: 0px; z-index: -1;">
-                                                                        <div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;">
-                                                                            <div style="width: 256px; height: 256px; overflow: hidden; transform: translateZ(0px); position: absolute; left: 218px; top: 203px;">
-                                                                                <canvas draggable="false" height="256" width="256" style="-webkit-user-select: none; position: absolute; left: 0px; top: 0px; height: 256px; width: 256px;"></canvas>
-                                                                            </div>
-                                                                            <div style="width: 256px; height: 256px; overflow: hidden; transform: translateZ(0px); position: absolute; left: -38px; top: 203px;"></div>
-                                                                            <div style="width: 256px; height: 256px; overflow: hidden; transform: translateZ(0px); position: absolute; left: 218px; top: -53px;">
-                                                                                <canvas draggable="false" height="256" width="256" style="-webkit-user-select: none; position: absolute; left: 0px; top: 0px; height: 256px; width: 256px;"></canvas>
-                                                                            </div>
-                                                                            <div style="width: 256px; height: 256px; overflow: hidden; transform: translateZ(0px); position: absolute; left: 218px; top: 459px;"></div>
-                                                                            <div style="width: 256px; height: 256px; overflow: hidden; transform: translateZ(0px); position: absolute; left: 474px; top: 203px;"></div>
-                                                                            <div style="width: 256px; height: 256px; overflow: hidden; transform: translateZ(0px); position: absolute; left: -38px; top: -53px;"></div>
-                                                                            <div style="width: 256px; height: 256px; overflow: hidden; transform: translateZ(0px); position: absolute; left: -38px; top: 459px;"></div>
-                                                                            <div style="width: 256px; height: 256px; overflow: hidden; transform: translateZ(0px); position: absolute; left: 474px; top: -53px;"></div>
-                                                                            <div style="width: 256px; height: 256px; overflow: hidden; transform: translateZ(0px); position: absolute; left: 474px; top: 459px;"></div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                                <div style="position: absolute; z-index: 0; transform: translateZ(0px); left: 0px; top: 0px;">
-                                                                    <div style="overflow: hidden;"></div>
-                                                                </div>
-                                                                <div style="position: absolute; left: 0px; top: 0px; z-index: 0;">
-                                                                    <div aria-hidden="true" style="position: absolute; left: 0px; top: 0px; z-index: 1; visibility: inherit;">
-                                                                        <div style="transform: translateZ(0px); position: absolute; left: -38px; top: 203px; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="{% static 'images/vt' %}" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div>
-                                                                        <div style="transform: translateZ(0px); position: absolute; left: 474px; top: 203px; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="{% static 'images/vt(1)' %}" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div>
-                                                                        <div style="transform: translateZ(0px); position: absolute; left: -38px; top: 459px; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="{% static 'images/vt(2)' %}" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div>
-                                                                        <div style="transform: translateZ(0px); position: absolute; left: -38px; top: -53px; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="{% static 'images/vt(3)' %}" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div>
-                                                                        <div style="transform: translateZ(0px); position: absolute; left: 474px; top: 459px; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="{% static 'images/vt(4)' %}" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div>
-                                                                        <div style="transform: translateZ(0px); position: absolute; left: 474px; top: -53px; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="{% static 'images/vt(5)' %}" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div>
-                                                                        <div style="transform: translateZ(0px); position: absolute; left: 218px; top: 459px; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="{% static 'images/vt(6)' %}" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div>
-                                                                        <div style="transform: translateZ(0px); position: absolute; left: 218px; top: -53px; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="{% static 'images/vt(7)' %}" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div>
-                                                                        <div style="transform: translateZ(0px); position: absolute; left: 218px; top: 203px; transition: opacity 200ms ease-out; -webkit-transition: opacity 200ms ease-out;"><img src="{% static 'images/vt(8)' %}" draggable="false" alt="" style="position: absolute; left: 0px; top: 0px; width: 256px; height: 256px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div style="position: absolute; left: 0px; top: 0px; z-index: 2; width: 100%; height: 100%;"></div>
-                                                            <div style="position: absolute; left: 0px; top: 0px; z-index: 3; width: 100%; transform-origin: 0px 0px 0px; transform: matrix(1, 0, 0, 1, 0, 0);">
-                                                                <div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 104; width: 100%;"></div>
-                                                                <div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 105; width: 100%;"></div>
-                                                                <div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 106; width: 100%;"></div>
-                                                                <div style="transform: translateZ(0px); position: absolute; left: 0px; top: 0px; z-index: 107; width: 100%;"></div>
-                                                            </div>
-                                                        </div>
-                                                        <div style="margin-left: 5px; margin-right: 5px; z-index: 1000000; position: absolute; left: 0px; bottom: 0px;">
-                                                            <a target="_blank" href="https://maps.google.com/maps?ll=23.79473,90.414305&z=16&t=m&hl=es-419&gl=US&mapclient=apiv3" title="Haz clic para ver esta área en Google Maps" style="position: static; overflow: visible; float: none; display: inline;">
-                                                                <div style="width: 66px; height: 26px; cursor: pointer;"><img src="{% static 'images/google4.png' %}" draggable="false" style="position: absolute; left: 0px; top: 0px; width: 66px; height: 26px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div>
-                                                            </a>
-                                                        </div>
-                                                        <div style="padding: 15px 21px; border: 1px solid rgb(171, 171, 171); font-family: Roboto, Arial, sans-serif; color: rgb(34, 34, 34); -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 16px; z-index: 10000002; display: none; width: 256px; height: 148px; position: absolute; left: 177px; top: 147px; background-color: white;">
-                                                            <div style="padding: 0px 0px 10px; font-size: 16px;">Datos del mapa</div>
-                                                            <div style="font-size: 13px;">Datos del mapa ©2015 Google</div>
-                                                            <div style="width: 13px; height: 13px; overflow: hidden; position: absolute; opacity: 0.7; right: 12px; top: 12px; z-index: 10000; cursor: pointer;"><img src="{% static 'images/mapcnt6.png' %}" draggable="false" style="position: absolute; left: -2px; top: -336px; width: 59px; height: 492px; -webkit-user-select: none; border: 0px; padding: 0px; margin: 0px;"></div>
-                                                        </div>
-                                                        <div class="gmnoprint" style="z-index: 1000001; position: absolute; right: 153px; bottom: 0px; width: 190px;">
-                                                            <div draggable="false" class="gm-style-cc" style="-webkit-user-select: none; height: 14px; line-height: 14px;">
-                                                                <div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;">
-                                                                    <div style="width: 1px;"></div>
-                                                                    <div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div>
-                                                                </div>
-                                                                <div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a style="color: rgb(68, 68, 68); text-decoration: none; cursor: pointer; display: none;">Datos del mapa</a><span>Datos del mapa ©2015 Google</span></div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="gmnoscreen" style="position: absolute; right: 0px; bottom: 0px;">
-                                                            <div style="font-family: Roboto, Arial, sans-serif; font-size: 11px; color: rgb(68, 68, 68); direction: ltr; text-align: right; background-color: rgb(245, 245, 245);">Datos del mapa ©2015 Google</div>
-                                                        </div>
-                                                        <div class="gmnoprint gm-style-cc" draggable="false" style="z-index: 1000001; -webkit-user-select: none; height: 14px; line-height: 14px; position: absolute; right: 0px; bottom: 0px;">
-                                                            <div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;">
-                                                                <div style="width: 1px;"></div>
-                                                                <div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div>
-                                                            </div>
-                                                            <div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a href="https://www.google.com/intl/es-419_US/help/terms_maps.html" target="_blank" style="text-decoration: none; cursor: pointer; color: rgb(68, 68, 68);">Condiciones del servicio</a></div>
-                                                        </div>
-                                                        <div draggable="false" class="gm-style-cc" style="-webkit-user-select: none; height: 14px; line-height: 14px; display: none; position: absolute; right: 0px; bottom: 0px;">
-                                                            <div style="opacity: 0.7; width: 100%; height: 100%; position: absolute;">
-                                                                <div style="width: 1px;"></div>
-                                                                <div style="width: auto; height: 100%; margin-left: 1px; background-color: rgb(245, 245, 245);"></div>
-                                                            </div>
-                                                            <div style="position: relative; padding-right: 6px; padding-left: 6px; font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); white-space: nowrap; direction: ltr; text-align: right; vertical-align: middle; display: inline-block;"><a target="_new" title="Informar a Google errores en las imágenes o el mapa de carreteras." href="https://www.google.com/maps/@23.7947301,90.4143047,16z/data=!10m1!1e1!12b1?source=apiv3&rapsrc=apiv3" style="font-family: Roboto, Arial, sans-serif; font-size: 10px; color: rgb(68, 68, 68); text-decoration: none; position: relative;">Informar un error en el mapa</a></div>
-                                                        </div>
-                                                    </div>
-                                                </div>
+                                                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3776.381819540171!2d-99.25405049949642!3d18.82568329548586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cdd90d9692c2e3%3A0xf1d1577c793026f3!2sXochitepec%2C+Morelos%2C+62790+U.H.+Jos%C3%A9+Mar%C3%ADa+Morelos+y+Pav%C3%B3n%2C+Mor.!5e0!3m2!1ses-419!2smx!4v1447531655347" width="600" height="450" frameborder="0" style="border:0; pointer-events: none;" allowfullscreen></iframe>
                                             </div>
                                         </div>
                                         <!-- Map end -->
@@ -1480,22 +941,18 @@
                                                 <form action="#" id="contactForm" novalidate="">
                                                     <div class="input-field">
                                                         <input id="contact_name" type="text" name="contactName" class="validate input-box">
-                                                        <label for="contact_name" class="input-label">Name</label>
+                                                        <label for="contact_name" class="input-label">Nombre</label>
                                                     </div>
                                                     <div class="input-field">
                                                         <input id="email" type="email" name="contactEmail" class="validate input-box">
                                                         <label for="email" class="input-label">Email</label>
                                                     </div>
-                                                    <div class="input-field">
-                                                        <input id="subject" type="text" name="contactSubject" class="validate input-box">
-                                                        <label for="subject" class="input-label">Subject</label>
-                                                    </div>
                                                     <div class="input-field textarea-input">
                                                         <textarea id="textarea1" name="contactMessage" class="validate materialize-textarea" style="height: 22px;"></textarea>
-                                                        <label for="textarea1" class="input-label">Message</label>
+                                                        <label for="textarea1" class="input-label">Mensaje</label>
                                                     </div>
                                                     <div class="input-field submit-wrap clearfix">
-                                                        <button type="submit" class="left waves-effect btn-flat brand-text submit-btn">send message</button>
+                                                        <button type="submit" class="left waves-effect btn-flat brand-text submit-btn">Enviar mensaje</button>
                                                         <div class="right form-loader-area">
                                                             <svg class="circular size-20" height="20" width="20">
                                                                 <circle class="path" cx="10" cy="10" r="7" fill="none" stroke-width="3" stroke-miterlimit="10"></circle>
@@ -1531,10 +988,6 @@
             <div class="backdrop" style="top: 0px; left: 0px;"></div>
         </div>
         <div class="material-tooltip">
-            <span>Linkdin</span>
-            <div class="backdrop" style="top: 0px; left: 0px;"></div>
-        </div>
-        <div class="material-tooltip">
             <span>Twitter</span>
             <div class="backdrop" style="top: 0px; left: 0px;"></div>
         </div>
@@ -1542,20 +995,13 @@
             <span>Google Plus</span>
             <div class="backdrop" style="top: 0px; left: 0px;"></div>
         </div>
-        <div class="material-tooltip">
-            <span>Dribbble</span>
-            <div class="backdrop" style="top: 0px; left: 0px;"></div>
-        </div>
-        <div class="material-tooltip">
-            <span>Behance</span>
-            <div class="backdrop" style="top: 0px; left: 0px;"></div>
-        </div>
+
         <div class="hiddendiv common" style="width: 418px;"></div>
         <ul id="dropdown1" class="inline-menu submenu-ul dropdown-content">
             <li>Home</li>
             <li><a href="{% url 'vista_blog' %}">All Blog</a>
             </li>
-            <li><a href="http://www.bdinfosys.com/demo/materialx/blog-with-sidebar.html">Blog with Sidebar</a>
+            <li><a href="{% url 'vista_blog' %}">Blog with Sidebar</a>
             </li>
             <li><a href="{% url 'vista_entrada' %}">Single Blog</a>
             </li>
@@ -1567,4 +1013,33 @@
         <div id="ascrail2000-hr" class="nicescroll-rails" style="height: 9px; z-index: 9999999; position: fixed; left: 0px; width: 100%; bottom: 0px; cursor: default; display: none; opacity: 0;">
             <div style="position: relative; top: 0px; height: 7px; width: 1360px; border: 1px solid rgb(255, 255, 255); border-radius: 5px; background-color: rgb(66, 66, 66); background-clip: padding-box;"></div>
         </div>
+{% endblock %}
+
+{% block js %}
+    <script type="text/javascript">
+    // Disable scroll zooming and bind back the click event
+      var onMapMouseleaveHandler = function (event) {
+        var that = $(this);
+
+        that.on('click', onMapClickHandler);
+        that.off('mouseleave', onMapMouseleaveHandler);
+        that.find('iframe').css("pointer-events", "none");
+      }
+
+      var onMapClickHandler = function (event) {
+        var that = $(this);
+
+        // Disable the click handler until the user leaves the map area
+        that.off('click', onMapClickHandler);
+
+        // Enable scrolling zoom
+        that.find('iframe').css("pointer-events", "auto");
+
+        // Handle the mouse leave event
+        that.on('mouseleave', onMapMouseleaveHandler);
+      }
+
+      // Enable map zooming with mouse scroll when the user clicks the map
+      $('.map-wrapper').on('click', onMapClickHandler);
+    </script>
 {% endblock %}

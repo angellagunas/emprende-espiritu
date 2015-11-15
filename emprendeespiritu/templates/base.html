@@ -17,7 +17,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
         <!-- Favicon-->
-        <link rel="shortcut icon" href="http://www.bdinfosys.com/demo/materialx/images/favicon.png">
+        <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
         <!-- Stylesheets -->
         <link rel="stylesheet" href="{% static 'css/normalize.css' %}" media="screen,projection">
         <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" media="screen,projection">
@@ -66,6 +66,7 @@
         <script type="text/javascript" charset="UTF-8" src="{% static 'js/stats.js' %}"></script>
         <script type="text/javascript" charset="UTF-8" src="{% static 'js/controls.js' %}"></script>
 
-
+        {% block js %}
+        {% endblock %}
     </body>
 </html>
