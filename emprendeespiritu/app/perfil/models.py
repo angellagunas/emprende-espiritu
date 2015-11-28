@@ -5,6 +5,7 @@ from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 from localflavor.mx.models import MXStateField, MXZipCodeField
 
+
 class Pais(models.Model):
     nombre = models.CharField(
         max_length=255,
@@ -22,10 +23,10 @@ class Pais(models.Model):
         ordering = ['nombre']
         verbose_name = u'país'
         verbose_name_plural = u'paises'
-        
+
 
 class UserProfile(models.Model):
-# Basic user information
+    # Basic user information
     user = models.OneToOneField(
         settings.AUTH_USER_MODEL,
         on_delete=models.PROTECT,
@@ -33,7 +34,7 @@ class UserProfile(models.Model):
         verbose_name=_('user')
     )
     picture = models.FileField(
-        upload_to='photos/%Y/%m/%d',
+        upload_to='perfil/%Y/%m/%d',
         null=True, blank=True,
         verbose_name=_('profile picture')
     )
@@ -60,4 +61,7 @@ class UserProfile(models.Model):
     residence_zip_code = MXZipCodeField(
         null=True, blank=True,
         verbose_name=_('residence ZIP code')
+    )
+    status = models.BooleanField(
+        default=True
     )

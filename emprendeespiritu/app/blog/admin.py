@@ -1,3 +1,7 @@
 from django.contrib import admin
 
-# Register your models here.
+from emprendeespiritu.app.blog.models import Entrada, ComentarioBlog, LikeEntrada
+
+admin.site.register(Entrada)
+admin.site.register(ComentarioBlog)
+admin.site.register(LikeEntrada)
