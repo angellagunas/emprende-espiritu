@@ -38,8 +38,13 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'compressor',
-    'emprendeespiritu.app.perfil',
     'emprendeespiritu.app.blog',
+    'emprendeespiritu.app.comentarios',
+    'emprendeespiritu.app.cursos',
+    'emprendeespiritu.app.galeria',
+    'emprendeespiritu.app.perfil',
+    'emprendeespiritu.app.productos',
+    'emprendeespiritu.app.talleres',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -112,12 +117,26 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_URL = '/media/assets/'
+STATIC_URL = '/assets/'
+
+STATIC_ROOT = os.path.realpath(
+    os.path.join(BASE_DIR, 'site-media', 'assets')
+)
 
 STATICFILES_DIRS = (
     os.path.realpath(os.path.join(BASE_DIR, 'media','assets')),
 )
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'compressor.finders.CompressorFinder',
+)
+
+MEDIA_ROOT = os.path.realpath(
+    os.path.join(BASE_DIR, 'media', 'uploads')
+)
+
 COMPRESS_ROOT = os.path.realpath(os.path.join(BASE_DIR, 'media','assets'))
 
-COMPRESS_ENABLED = True
+COMPRESS_ENABLED = False
