@@ -1,0 +1,151 @@
+{% load staticfiles %}
+
+<style>
+    @media (max-width: 999px) {
+      .facet_sidebar {
+        display: block;
+      }
+      .facet_sidebar_desktop {
+        display: none;
+      }
+    }
+    @media (min-width: 1001px) {
+      .facet_sidebar_desktop {
+        display: block;
+      }
+      .facet_sidebar {
+        display: none;
+      }
+    }
+</style>
+
+<!-- header navigation start -->
+<header id="navigation" class="root-sec white nav">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="nav-inner">
+                    <nav class="primary-nav">
+                        <div class="clearfix nav-wrapper">
+                            <a href="{% url 'vista_principal' %}" class="left brand-logo menu-smooth-scroll" data-section="#home"><img src="{% static 'images/logo.png' %}" alt="">
+                            </a>
+                            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+                            <ul class="right static-menu">
+                                <li class="search-form-li">
+                                    <a id="initSearchIcon" class=""><i class="mdi-action-search"></i> </a>
+                                    <div class="search-form-wrap hide">
+                                        <form action="#" class="">
+                                            <input type="search" class="search">
+                                            <button type="submit"><i class="mdi-action-search"></i>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </li>
+                                <li>
+                                    <a class="dropdown-button blog-submenu-init" href="#!" data-activates="dropdown1">
+                                    <i class="mdi-navigation-more-vert right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <div class="facet_sidebar">
+                                <ul class="inline-menu side-nav " id="mobile-demo" style="overflow: scroll;">
+                                    <!-- Mini Profile // only visible in Tab and Mobile -->
+                                    <li class="mobile-profile">
+                                        <div class="profile-inner">
+                                            <div class="pp-container">
+                                                <img src="{% static 'images/person.jpg' %}" alt="">
+                                            </div>
+                                            <h3>Benjamín Sánchez</h3>
+                                            <h5>Ponente y entusiasta</h5>
+                                        </div>
+                                    </li>
+                                    <!-- mini profile end-->
+                                    {% if is_dashboard %}
+                                        <li class=""><a href="#div_cursos" data-section="#div_cursos" class="menu-smooth-scroll"><i class="fa fa-pencil fa-fw"></i>Cursos</a>
+                                        </li>
+                                        <li class=""><a href="#div_talleres" data-section="#div_talleres" class="menu-smooth-scroll"><i class="fa fa-paper-plane fa-fw"></i>Talleres</a>
+                                        </li>
+                                    {% else %}                                    
+                                        <li class="">
+                                            <a href="#about" data-section="#about" class="menu-smooth-scroll">
+                                                <i class="fa fa-user fa-fw">
+                                                </i>Acerca de Mí
+                                            </a>
+                                        </li>
+                                        <li class=""><a href="#portfolio" data-section="#portfolio" class="menu-smooth-scroll"><i class="fa fa-briefcase fa-fw"></i>Portafolio</a>
+                                        </li>
+                                        <li class=""><a href="#team" data-section="#team" class="menu-smooth-scroll"><i class="fa fa-users fa-fw"></i>Nosotros</a>
+                                        </li>
+                                        <li class=""><a href="#testimonial" data-section="#testimonial" class="menu-smooth-scroll"><i class="fa fa-comments fa-fw"></i>Comentarios</a>
+                                        </li>
+                                        <li class=""><a href="#blog" data-section="#blog" class="menu-smooth-scroll"><i class="fa fa-pencil fa-fw"></i>Blog</a>
+                                        </li>
+                                        <li class=""><a href="" data-section="#contact" class="menu-smooth-scroll"><i class="fa fa-paper-plane fa-fw"></i>Contacto</a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+
+                            <div class="facet_sidebar_desktop">
+                                <ul class="inline-menu side-nav " id="mobile-demo">
+                                    <!-- Mini Profile // only visible in Tab and Mobile -->
+                                    <li class="mobile-profile">
+                                        <div class="profile-inner">
+                                            <div class="pp-container">
+                                                <img src="{% static 'images/person.jpg' %}" alt="">
+                                            </div>
+                                            <h3>Benjamín Sánchez</h3>
+                                            <h5>Ponente y entusiasta</h5>
+                                        </div>
+                                    </li>
+                                    <!-- mini profile end-->
+                                    {% if is_dashboard %}
+                                        <li class="">
+                                            <a href="#div_cursos" data-section="#div_cursos" class="menu-smooth-scroll">
+                                                <i class="fa fa-pencil fa-fw"></i>Cursos
+                                            </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="#div_talleres" data-section="#div_talleres" class="menu-smooth-scroll">
+                                                <i class="fa fa-paper-plane fa-fw"></i>Talleres
+                                            </a>
+                                        </li>
+                                    {% else %}
+                                        <li class="">
+                                            <a href="#about" data-section="#about" class="menu-smooth-scroll">
+                                                <i class="fa fa-user fa-fw">
+                                                </i>Acerca de Mí
+                                            </a>
+                                        </li>
+                                        <li class=""><a href="#portfolio" data-section="#portfolio" class="menu-smooth-scroll"><i class="fa fa-briefcase fa-fw"></i>Portafolio</a>
+                                        </li>
+                                        <li class=""><a href="#team" data-section="#team" class="menu-smooth-scroll"><i class="fa fa-users fa-fw"></i>Nosotros</a>
+                                        </li>
+                                        <li class=""><a href="#testimonial" data-section="#testimonial" class="menu-smooth-scroll"><i class="fa fa-comments fa-fw"></i>Comentarios</a>
+                                        </li>
+                                        <li class=""><a href="#blog" data-section="#blog" class="menu-smooth-scroll"><i class="fa fa-pencil fa-fw"></i>Blog</a>
+                                        </li>
+                                        <li class=""><a href="" data-section="#contact" class="menu-smooth-scroll"><i class="fa fa-paper-plane fa-fw"></i>Contacto</a>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- .container end -->
+</header>
+<div class="hiddendiv common"></div>
+<ul id="dropdown1" class="inline-menu submenu-ul dropdown-content">
+    <li>
+        <a href="#">Dashboard</a>
+    </li>
+    <li>
+        <a href="#">Salir</a>
+    </li>
+</ul>
+
+<!-- #header  navigation end -->
