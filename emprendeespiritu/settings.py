@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'emprendeespiritu.app.perfil',
     'emprendeespiritu.app.productos',
     'emprendeespiritu.app.talleres',
+    'emprendeespiritu.app.home',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -119,9 +120,7 @@ USE_TZ = True
 
 STATIC_URL = '/assets/'
 
-STATIC_ROOT = os.path.realpath(
-    os.path.join(BASE_DIR, 'site-media', 'assets')
-)
+
 
 STATICFILES_DIRS = (
     os.path.realpath(os.path.join(BASE_DIR, 'media','assets')),
@@ -134,7 +133,7 @@ STATICFILES_FINDERS = (
 )
 
 MEDIA_ROOT = os.path.realpath(
-    os.path.join(BASE_DIR, 'media', 'uploads')
+    os.path.join(BASE_DIR, 'media', 'assets','uploads')
 )
 
 COMPRESS_ROOT = os.path.realpath(os.path.join(BASE_DIR, 'media','assets'))

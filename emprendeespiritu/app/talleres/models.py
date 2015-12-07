@@ -31,7 +31,7 @@ class Taller(models.Model):
     )
 
     img = models.FileField(
-        upload_to='blog/%Y/%m/%d',
+        upload_to='taller/',
         null=True,
         blank=True,
         verbose_name=_('Imagen')

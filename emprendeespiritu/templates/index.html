@@ -18,73 +18,22 @@
         <!--preloader end-->
         <!-- Main Container -->
         <main id="app" class="main-section">
-            <!-- header navigation start -->
-            <header id="navigation" class="root-sec white nav">
-                <div class="container">
+
+            {% include 'navbar.html' %}
+
+            <!-- Home Section start -->
+            <div id="loginModal" class="modal white">
+                <div class="model-img"></div>
+                <div class="modal-content">
                     <div class="row">
-                        <div class="col-sm-12">
-                            <div class="nav-inner">
-                                <nav class="primary-nav">
-                                    <div class="clearfix nav-wrapper">
-                                        <a href="#home" class="left brand-logo menu-smooth-scroll" data-section="#home"><img src="{% static 'images/logo.png' %}" alt="">
-                                        </a>
-                                        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-                                        <ul class="right static-menu">
-                                            <li class="search-form-li">
-                                                <a id="initSearchIcon" class=""><i class="mdi-action-search"></i> </a>
-                                                <div class="search-form-wrap hide">
-                                                    <form action="#" class="">
-                                                        <input type="search" class="search">
-                                                        <button type="submit"><i class="mdi-action-search"></i>
-                                                        </button>
-                                                    </form>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <a class="dropdown-button blog-submenu-init" href="#!" data-activates="dropdown1">
-                                                <i class="mdi-navigation-more-vert right"></i>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                        <ul class="inline-menu side-nav" id="mobile-demo">
-                                            <!-- Mini Profile // only visible in Tab and Mobile -->
-                                            <li class="mobile-profile">
-                                                <div class="profile-inner">
-                                                    <div class="pp-container">
-                                                        <img src="{% static 'images/person.jpg' %}" alt="">
-                                                    </div>
-                                                    <h3>Benjamín Sánchez</h3>
-                                                    <h5>Ponente y entusiasta</h5>
-                                                </div>
-                                            </li>
-                                            <!-- mini profile end-->
-                                            <li class="">
-                                                <a href="#about" data-section="#about" class="menu-smooth-scroll">
-                                                    <i class="fa fa-user fa-fw">
-                                                    </i>Acerca de Mí
-                                                </a>
-                                            </li>
-                                            <li class=""><a href="#portfolio" data-section="#portfolio" class="menu-smooth-scroll"><i class="fa fa-briefcase fa-fw"></i>Portafolio</a>
-                                            </li>
-                                            <li class=""><a href="#team" data-section="#team" class="menu-smooth-scroll"><i class="fa fa-users fa-fw"></i>Nosotros</a>
-                                            </li>
-                                            <li class=""><a href="#testimonial" data-section="#testimonial" class="menu-smooth-scroll"><i class="fa fa-comments fa-fw"></i>Comentarios</a>
-                                            </li>
-                                            <li class=""><a href="#blog" data-section="#blog" class="menu-smooth-scroll"><i class="fa fa-pencil fa-fw"></i>Blog</a>
-                                            </li>
-                                            <li class=""><a href="./MaterialX - Material Design Personal Template_files/MaterialX - Material Design Personal Template.html" data-section="#contact" class="menu-smooth-scroll"><i class="fa fa-paper-plane fa-fw"></i>Contacto</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </nav>
-                            </div>
+                        <div class="col-md-1 col-lg-2"></div>
+                        <div class="col-sm-12 col-md-10 col-lg-8">
+                            {% include 'home/login_form.html' %}
                         </div>
                     </div>
                 </div>
-                <!-- .container end -->
-            </header>
-            <!-- #header  navigation end -->
-            <!-- Home Section start -->
+            </div>
+
             <section id="home" class="scroll-section root-sec grey lighten-5 home-wrap">
                 <div class="sec-overlay">
                     <div class="container">
@@ -94,8 +43,10 @@
                                     <div class="center-align home-content">
                                         <h1 class="home-title">Emprende <span>tu espíritu</span></h1>
                                         <h2 class="home-subtitle">Cursos y talleres de superación personal y profesional</h2>
-                                        <a href="./MaterialX - Material Design Personal Template_files/MaterialX - Material Design Personal Template.html" class="hire-me-btn btn waves-effect waves-light btn-large brand-bg white-text regular-text">Suscribirme <i class="mdi-content-send left"></i>
+                                        <a href="" id="login-btn" class="btn waves-effect waves-light btn-large brand-bg white-text regular-text">
+                                            Entrar
                                         </a>
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -353,8 +304,8 @@
                 <div id="portfolioModal" class="modal white">
                     <div class="model-img"></div>
                     <div class="modal-content">
-                        <h2 class="title">Lorem ipsum dolor sit fugit dolore.</h2>
-                        <p class="m-content">A portfolio is a collection of documents and writing that you assemble in order to demonstrate that you have the appropriate prior.</p>
+                        <h2 class="title"></h2>
+                        <p class="m-content"></p>
                     </div>
                     <div class="modal-footer">
                         <a href="#" target="_blank" class="waves-effect btn-flat brand-text modal-action">Live Demo</a>
@@ -1004,7 +955,7 @@
             <div class="backdrop" style="top: 0px; left: 0px;"></div>
         </div>
 
-        <div class="hiddendiv common" style="width: 418px;"></div>
+        <div class="hiddendiv common"></div>
         <ul id="dropdown1" class="inline-menu submenu-ul dropdown-content">
             <li>Home</li>
             <li><a href="{% url 'vista_blog' %}">All Blog</a>
@@ -1014,13 +965,7 @@
             <li><a href="{% url 'vista_entrada' %}">Single Blog</a>
             </li>
         </ul>
-        <div class="drag-target" style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
-        <div id="ascrail2000" class="nicescroll-rails" style="width: 9px; z-index: 9999999; cursor: default; position: fixed; top: 0px; height: 100%; right: 0px; opacity: 0;">
-            <div style="position: relative; top: 0px; float: right; width: 7px; height: 53px; border: 1px solid rgb(255, 255, 255); border-radius: 5px; background-color: rgb(66, 66, 66); background-clip: padding-box;"></div>
-        </div>
-        <div id="ascrail2000-hr" class="nicescroll-rails" style="height: 9px; z-index: 9999999; position: fixed; left: 0px; width: 100%; bottom: 0px; cursor: default; display: none; opacity: 0;">
-            <div style="position: relative; top: 0px; height: 7px; width: 1360px; border: 1px solid rgb(255, 255, 255); border-radius: 5px; background-color: rgb(66, 66, 66); background-clip: padding-box;"></div>
-        </div>
+        
 {% endblock %}
 
 {% block js %}

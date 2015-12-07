@@ -4,7 +4,8 @@ from django.db import models
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 from localflavor.mx.models import MXStateField, MXZipCodeField
-
+from emprendeespiritu.app.cursos.models import Curso
+from emprendeespiritu.app.talleres.models import Taller
 
 class Pais(models.Model):
     nombre = models.CharField(
@@ -64,4 +65,32 @@ class UserProfile(models.Model):
     )
     status = models.BooleanField(
         default=True
+    )
+
+class CursoSuscrito(models.Model):
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.PROTECT,
+        null=False,
+        blank=False
+    )
+    curso = models.ForeignKey(
+        Curso,
+        on_delete=models.PROTECT,
+        null=False,
+        blank=False
+    )
+
+class TallerSuscrito(models.Model):
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.PROTECT,
+        null=False,
+        blank=False
+    )
+    taller = models.ForeignKey(
+        Taller,
+        on_delete=models.PROTECT,
+        null=False,
+        blank=False
     )

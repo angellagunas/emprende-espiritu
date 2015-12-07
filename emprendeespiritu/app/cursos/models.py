@@ -31,7 +31,7 @@ class Curso(models.Model):
     )
 
     img = models.FileField(
-        upload_to='curso/%Y/%m/%d',
+        upload_to='curso/',
         null=True,
         blank=True,
         verbose_name=_('Imagen')
