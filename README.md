@@ -11,6 +11,7 @@ requerimientos:
     *pip install django_compressor
     *pip install -e git+http://github.com/SmileyChris/django-mailer-2.git#egg=django-mailer-2
     *pip install django-celery
+    *pip install djrill 
 
     //Install celery broker
     wget https://www.rabbitmq.com/rabbitmq-signing-key-public.asc
