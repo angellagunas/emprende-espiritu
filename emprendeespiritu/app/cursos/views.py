@@ -67,4 +67,4 @@ def dislike_curso(request, *args, **kwargs):
         )
     if dislikeCurso:
         dislikeCurso.delete()
-        return redirect('/curso/single/%s'%(taller.id))
+        return redirect('/curso/single/%s'%(curso.id))
