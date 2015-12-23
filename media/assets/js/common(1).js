@@ -93,6 +93,7 @@ $(window).load(function(){
 
 
 	// favorite maker
+	/*
 	(function(){
 		var lovedText = "You already love this", loveText = "Love this", loveClass = "active";
 		$('.js-favorite').on('click', function(e){
@@ -108,7 +109,7 @@ $(window).load(function(){
 				$(this).find('.numb').text( favoriteNumb );
 			}
 		});
-	}());
+	}());*/
 
 
 	// Blog masonry re layout

@@ -27,7 +27,8 @@
                 <div class="nav-inner">
                     <nav class="primary-nav">
                         <div class="clearfix nav-wrapper">
-                            <a href="{% url 'vista_principal' %}" class="left brand-logo menu-smooth-scroll" data-section="#home"><img src="{% static 'images/logo.png' %}" alt="">
+                            <a href="{% url 'vista_index' %}" class="left brand-logo">
+                                <img src="{% static 'images/logo.png' %}" alt="Emprende tu espiritu" href="{% url 'vista_index' %}">
                             </a>
                             <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
                             <ul class="right static-menu">
@@ -41,11 +42,13 @@
                                         </form>
                                     </div>
                                 </li>
+                                {% if user.is_authenticated %}
                                 <li>
                                     <a class="dropdown-button blog-submenu-init" href="#!" data-activates="dropdown1">
                                     <i class="mdi-navigation-more-vert right"></i>
                                     </a>
                                 </li>
+                                {% endif %}
                             </ul>
                             <div class="facet_sidebar">
                                 <ul class="inline-menu side-nav " id="mobile-demo" style="overflow: scroll;">
@@ -69,7 +72,7 @@
                                         <li class="">
                                             <a href="#about" data-section="#about" class="menu-smooth-scroll">
                                                 <i class="fa fa-user fa-fw">
-                                                </i>Acerca de Mí
+                                                </i>Acerca de
                                             </a>
                                         </li>
                                         <li class=""><a href="#portfolio" data-section="#portfolio" class="menu-smooth-scroll"><i class="fa fa-briefcase fa-fw"></i>Portafolio</a>
@@ -139,13 +142,25 @@
     <!-- .container end -->
 </header>
 <div class="hiddendiv common"></div>
-<ul id="dropdown1" class="inline-menu submenu-ul dropdown-content">
-    <li>
-        <a href="#">Dashboard</a>
-    </li>
-    <li>
-        <a href="#">Salir</a>
-    </li>
-</ul>
-
+{% if user.is_authenticated %}
+    {% if is_dashboard %}
+    <ul id="dropdown1" class="inline-menu submenu-ul dropdown-content">
+        <li>
+            <a href="{% url 'vista_index' %}">Home</a>
+        </li>
+        <li>
+            <a href="{% url 'vista_logout' %}">Salir</a>
+        </li>
+    </ul>
+    {% else %}
+    <ul id="dropdown1" class="inline-menu submenu-ul dropdown-content">
+        <li>
+            <a href="{% url 'vista_dashboard' %}">Dashboard</a>
+        </li>
+        <li>
+            <a href="{% url 'vista_logout' %}">Salir</a>
+        </li>
+    </ul>
+    {% endif %}
+{% endif %}
 <!-- #header  navigation end -->

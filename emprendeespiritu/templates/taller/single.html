@@ -1,0 +1,149 @@
+{% extends "base.html" %}
+
+<title>Emprende tu espíritu - Taller</title>
+
+{% block content %}
+{% load staticfiles %}   
+    <!-- Preloader --> 
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circle-loader" height="50" width="50">
+                <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="6" stroke-miterlimit="10"></circle>
+            </svg>
+        </div>
+    </div>
+    <!--preloader end-->
+    <div id="app">
+        {% include 'navbar.html' %}
+        <!-- Banner start -->
+        <section id="banner" class="root-sec brand-bg padd-tb-55 single-banner blogpage-banner-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="clearfix blog-banner-text blog-single-banner">
+                        <div class="col-md-12">
+                            <h2 class="title">{{ taller }}</h2>
+                            <ul class="clearfix blog-post-meta">
+                                <li>By <a href="#">{{ taller.author }}</a>
+                                </li>
+                                <li>Since {{ taller.fecha_creacion }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- ./Banner end -->
+        <!-- Blog Post Container-->
+        <section id="all-posts" class="root-sec grey lighten-5 blogpage-posts-wrap">
+            <div class="container">
+                <div class="row">
+                    <div class="clearfix all-blog-post blog-inner with-sidebar">
+                        <!-- post container start-->
+                        <div class="col-sm-8">
+                            <article class="single-post-page">
+                                <div class="thumb-wrap">
+                                    <img src="{% static 'uploads/' %}{{ taller.img }}" alt="">
+                                </div>
+                                <div class="single-post-content">
+                                    <p>
+                                        {{ taller.descripcion }}
+                                    </p>
+                                </div>
+                                <div class="clearfix post-footer">
+                                    {% if like_me > 0 %}
+                                    <a href="{% url 'dislike_taller' taller.id %}" class="left post-like js-favorite active" title="You already love this">
+                                    {% else %}
+                                    <a href="{% url 'like_taller' taller.id %}" class="left post-like js-favorite" title="Love this">
+                                    {% endif %}
+                                        <i class="mdi-action-favorite">
+                                        </i>
+                                        <span class="numb">{{ likes }}</span>
+                                    </a>
+                                    <ul class="clearfix right share-post">
+                                        <li>
+                                            <a href="http://www.facebook.com/sharer.php?s=100&p[url]=http://emprendetuespirutu-xenondevelops.c9users.io/&p[title]=Emprende tu espíritu&p[summary]={{ taller }}&&p[images][0]=taller.img" target="_blank">
+                                            <i class="fa fa-facebook"></i>
+                                            <span>SHARE</span>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a target="_blank" href="https://twitter.com/intent/tweet?url=http://emprendetuespirutu-xenondevelops.c9users.io/&amp;text=Emprende tu espíritu&amp;via=EmprenEspiritu">
+                                            <i class="fa fa-twitter"></i>
+                                            <span>TWEET</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="comment-reply-section">
+                                    <h2 class="com-title">1 Comment</h2>
+                                    <div class="comment-list-wrapper">
+                                        <ul class="comment-list">
+                                            {% for comentario in comentarios%}
+                                            <li>
+                                                <div class="clearfix card">
+                                                    <div class="left comment-img">
+                                                        <a href="#"><img src="{% static 'images/cmt1.jpg' %}" alt="">
+                                                        </a>
+                                                    </div>
+                                                    <div class="card-content comment-content">
+                                                        <div class="comment-meta">
+                                                            <p class="author"><a href="#">{{ comentario.author.username }}</a> <span>dice:</span>
+                                                            </p>
+                                                            <p class="date">{{ comentario.fecha_creacion }}</p>
+                                                        </div>
+                                                        <div class="comment-text">
+                                                            <p>
+                                                                {{ comentario }}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="contact-form  comment-reply-form">
+                                    <h2 class="com-title">Leave a Reply<a href="#">Cancel Replay</a></h2>
+                                    <form action="{% url 'vista_comentario_taller' taller.id %}" class="cform-wrapper" method="POST">
+                                        {% csrf_token %}
+                                        {{ commentForm }}
+                                        <div class="input-field submit-wrap">
+                                            <button type="submit" class="waves-effect waves-light btn-large brand-bg white-text comm-submit regular-text">SEND COMMENT</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- ./post container end-->
+
+                        <!-- Sidebar start-->
+                        <div class="col-sm-4">
+                            <div class="primary-sidebar">
+                                <aside class="single-widget">
+                                    <h2 class="widget-title">Temario</h2>
+                                    <ul>
+                                        {% if semanas.count > 0 %}
+                                        {% for semana in semanas %}
+                                        <li>
+                                            <a href="#">{{ semana.nombre }}</a>
+                                        </li>
+                                        {% endfor %}
+                                        {% else %}
+                                        <li>
+                                            <a>Aún no se define el temario</a>
+                                        </li>
+                                        {% endif%}
+                                    </ul>
+                                </aside>
+                            </div>
+                        </div>
+                        <!-- ./sidebar end-->
+                    </div>
+                </div>
+            </div>
+            <!-- ./container end-->
+        </section>
+        <!-- ./Blog Post Container end-->
+        {% include 'footer.html' %} 
+    </div>
+{% endblock %}
