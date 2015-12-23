@@ -1,6 +1,7 @@
 {% extends "base.html" %}
-
+{% block title %}
 <title>Emprende tu espíritu - Curso</title>
+{% endblock %}
 
 {% block content %}
 {% load staticfiles %}   
@@ -14,78 +15,18 @@
     </div>
     <!--preloader end-->
     <div id="app">
-        <!-- header navigation -->
-        <header id="navigation" class="root-sec white nav">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="nav-inner">
-                            <nav class="primary-nav">
-                                <div class="clearfix nav-wrapper">
-                                    <a href="#!" class="left brand-logo"><img src="{% static 'images/logo.png' %}" alt="">
-                                    </a>
-                                    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-                                    <ul class="right static-menu">
-                                        <li class="search-form-li">
-                                            <a id="initSearchIcon" class=""><i class="mdi-action-search"></i> </a>
-                                            <div class="search-form-wrap hide">
-                                                <form action="#" class="">
-                                                    <input type="search" class="search">
-                                                    <button type="submit"><i class="mdi-action-search"></i>
-                                                    </button>
-                                                </form>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-button blog-submenu-init" href="#!" data-activates="dropdown1">
-                                            <i class="mdi-navigation-more-vert right"></i>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                    <ul class="inline-menu side-nav" id="mobile-demo">
-                                        <!-- Mini Profile // only visible in Tab and Mobile -->
-                                        <li class="mobile-profile">
-                                            <div class="profile-inner">
-                                                <div class="pp-container">
-                                                    <img src="{% static 'images/person.jpg' %}" alt="">
-                                                </div>
-                                                <h3>John Doe</h3>
-                                                <h5>Creative UI/UX Expert</h5>
-                                            </div>
-                                        </li>
-                                        <!-- mini profile end-->
-                                        <li><a href="{% url 'vista_principal' %}"><i class="fa fa-home fa-fw"></i>Home</a>
-                                        </li>
-                                        <li><a href="{% url 'vista_blog' %}"><i class="fa fa-pencil fa-fw"></i>Blog with Sidebar</a>
-                                        </li>
-                                        <li><a href="{% url 'vista_blog' %}"><i class="fa fa-pencil fa-fw"></i>Blog Full width</a>
-                                        </li>
-                                        <li><a href="{% url 'vista_entrada' %}"><i class="fa fa-pencil fa-fw"></i>Single Blog</a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-        <!-- header navigation end -->
+        {% include 'navbar.html' %}
         <!-- Banner start -->
         <section id="banner" class="root-sec brand-bg padd-tb-55 single-banner blogpage-banner-wrap">
             <div class="container">
                 <div class="row">
                     <div class="clearfix blog-banner-text blog-single-banner">
                         <div class="col-md-12">
-                            <h2 class="title">Your awesome post title</h2>
+                            <h2 class="title">{{ curso }}</h2>
                             <ul class="clearfix blog-post-meta">
-                                <li>By <a href="#">Admin</a>
+                                <li>By <a href="#">{{ curso.author }}</a>
                                 </li>
-                                <li>March 28, 2015</li>
-                                <li><a href="#">5 Comments</a>
-                                </li>
-                                <li><a href="#">UX Design</a>
-                                </li>
+                                <li>Since {{ curso.fecha_creacion }}</li>
                             </ul>
                         </div>
                     </div>
@@ -102,47 +43,42 @@
                         <div class="col-sm-8">
                             <article class="single-post-page">
                                 <div class="thumb-wrap">
-                                    <img src="{% static 'images/single-blog.png' %}" alt="">
+                                    <img src="{% static 'uploads/' %}{{ curso.img }}" alt="">
                                 </div>
                                 <div class="single-post-content">
-                                    <p>Curabitur suscipit suscipit tellus. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Donec vitae sapien ut libero venenatis faucibus. In ac felis quis tortor malesuada pretium.</p>
-                                    <h2>Photography by <a href="#">Picjumbo</a></h2>
-                                    <p>Maecenas vestibulum mollis diam. Duis vel nibh at velit scelerisque suscipit. Proin viverra, ligula sit amet ultrices semper, ligula arcu tristique sapien, a accumsan nisi mauris ac eros. In ac felis quis tortor malesuada pretium. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</p>
-                                    <h3>Lorem ipsum dolor sit amet</h3>
-                                    <p>Nullam vel sem. Praesent egestas neque eu enim. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Ut tincidunt tincidunt erat. Etiam vitae tortor. Nulla neque dolor, sagittis eget, iaculis quis, molestie non, velit. Aenean tellus metus, bibendum sed, posuere ac, mattis non, nunc. Fusce ac felis sit amet ligula pharetra condimentum.Praesent turpis. Suspendisse nisl elit, rhoncus eget, elementum ac, condimentum eget, diam. Quisque rutrum. Morbi nec metus. Phasellus blandit leo ut odio.</p>
-                                    <blockquote>Nulla consequat massa quis enim. In dui magna, posuere eget, vestibulum et, tempor auctor, justo. Curabitur suscipit suscipit tellus.</blockquote>
-                                    <p>Suspendisse feugiat. Donec interdum, metus et hendrerit aliquet, dolor diam sagittis ligula, eget egestas libero turpis vel mi. Etiam feugiat lorem non metus. Vivamus quis mi. Donec vitae sapien ut libero venenatis faucibus. Phasellus gravida semper nisi. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum.</p>
-                                    <ul>
-                                        <li>Consectetur adipiscing elit vtae elit libero</li>
-                                        <li>Nullam id dolor id eget lacinia odio posuere erat a ante</li>
-                                        <li>Integer posuere erat dapibus posuere velit</li>
-                                    </ul>
-                                    <p>Vestibulum facilisis, purus nec pulvinar iaculis, ligula mi congue nunc, vitae euismod ligula urna in dolor. Fusce fermentum odio nec arcu. In auctor lobortis lacus. Fusce vel dui. Praesent turpis. Fusce fermentum odio nec arcu. Aenean commodo ligula eget dolor. Etiam iaculis nunc ac metus. Praesent blandit laoreet nibh. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Ut varius tincidunt libero. Donec id justo.</p>
-                                    <pre>.some-style {
-width: 1170px;
-height: 200px;
-margin: 0 auto;
-background-color: #000000;
-}
-</pre>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non enim ut enim fringilla adipiscing id in lorem. Quisque aliquet neque vitae lectus tempus consectetur. Aliquam erat volutpat. Nunc eu nibh nulla, id cursus arcu.</p>
-                                    <p class="italic">In varius varius justo, eget ultrices mauris rhoncus non. Morbi tristique, mauris eu imperdiet bibendum, velit diam iaculis velit, in ornare massa enim at lorem. Etiam risus diam, porttitor vitae ultrices quis, dapibus id dolor. </p>
+                                    <p>
+                                        {{ curso.descripcion }}
+                                    </p>
                                 </div>
                                 <div class="clearfix post-footer">
-                                    <a href="#" class="left post-like js-favorite" title="Love this"><i class="mdi-action-favorite"></i> <span class="numb">109</span></a>
+                                    {% if like_me > 0 %}
+                                    <a href="{% url 'dislike_curso' curso.id %}" class="left post-like js-favorite active" title="You already love this">
+                                    {% else %}
+                                    <a href="{% url 'like_curso' curso.id %}" class="left post-like js-favorite" title="Love this">
+                                    {% endif %}
+                                        <i class="mdi-action-favorite">
+                                        </i>
+                                        <span class="numb">{{ likes }}</span>
+                                    </a>
                                     <ul class="clearfix right share-post">
-                                        <li><a href="#"><i class="fa fa-facebook"></i> <span>SHARE</span></a>
+                                        <li>
+                                            <a href="http://www.facebook.com/sharer.php?s=100&p[url]=http://emprendetuespirutu-xenondevelops.c9users.io/&p[title]=Emprende tu espíritu&p[summary]={{ taller }}&&p[images][0]=taller.img" target="_blank">
+                                            <i class="fa fa-facebook"></i>
+                                            <span>SHARE</span>
+                                            </a>
                                         </li>
-                                        <li><a href="#"><i class="fa fa-twitter"></i> <span>TWEET</span></a>
-                                        </li>
-                                        <li><a href="#"><i class="fa fa-google-plus"></i> <span>PLUS</span></a>
+                                        <li>
+                                            <a target="_blank" href="https://twitter.com/intent/tweet?url=http://emprendetuespirutu-xenondevelops.c9users.io/&amp;text=Emprende tu espíritu&amp;via=EmprenEspiritu">
+                                            <i class="fa fa-twitter"></i>
+                                            <span>TWEET</span>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="comment-reply-section">
-                                    <h2 class="com-title">8 Comments</h2>
+                                    <h2 class="com-title">1 Comment</h2>
                                     <div class="comment-list-wrapper">
                                         <ul class="comment-list">
+                                            {% for comentario in comentarios%}
                                             <li>
                                                 <div class="clearfix card">
                                                     <div class="left comment-img">
@@ -151,257 +87,54 @@ background-color: #000000;
                                                     </div>
                                                     <div class="card-content comment-content">
                                                         <div class="comment-meta">
-                                                            <p class="author"><a href="#">BDInfoSys</a> <span>says:</span>
+                                                            <p class="author"><a href="#">{{ comentario.author.username }}</a> <span>dice:</span>
                                                             </p>
-                                                            <p class="date">March 25, 2015 at 07.50 am</p>
-                                                            <a href="#" class="tooltips tooltipped reply-btn" data-position="top" data-delay="50" data-tooltip="Reply"><i class="mdi-content-reply"></i></a>
+                                                            <p class="date">{{ comentario.fecha_creacion }}</p>
                                                         </div>
                                                         <div class="comment-text">
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non enim ut enim fringilla adipiscing id in lorem. Quisque aliquet neque vitae lectus tempus consectetur.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <ul class="comment-list">
-                                                    <li>
-                                                        <div class="clearfix card">
-                                                            <div class="left comment-img">
-                                                                <a href="#"><img src="{% static 'images/unknown.jpg' %}" alt="">
-                                                                </a>
-                                                            </div>
-                                                            <div class="card-content comment-content">
-                                                                <div class="comment-meta">
-                                                                    <p class="author"><a href="#">BDInfoSys</a> <span>says:</span>
-                                                                    </p>
-                                                                    <p class="date">March 25, 2015 at 07.50 am</p>
-                                                                    <a href="#" class="tooltips tooltipped reply-btn" data-position="top" data-delay="50" data-tooltip="Reply"><i class="mdi-content-reply"></i></a>
-                                                                </div>
-                                                                <div class="comment-text">
-                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non enim ut enim fringilla adipiscing id in lorem. Quisque aliquet neque vitae lectus tempus consectetur.</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <ul class="comment-list">
-                                                            <li>
-                                                                <div class="clearfix card">
-                                                                    <div class="left comment-img">
-                                                                        <a href="#"><img src="{% static 'images/cmt1.jpg' %}" alt="">
-                                                                        </a>
-                                                                    </div>
-                                                                    <div class="card-content comment-content">
-                                                                        <div class="comment-meta">
-                                                                            <p class="author"><a href="#">BDInfoSys</a> <span>says:</span>
-                                                                            </p>
-                                                                            <p class="date">March 25, 2015 at 07.50 am</p>
-                                                                            <a href="#" class="tooltips tooltipped reply-btn" data-position="top" data-delay="50" data-tooltip="Reply"><i class="mdi-content-reply"></i></a>
-                                                                        </div>
-                                                                        <div class="comment-text">
-                                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non enim ut enim fringilla adipiscing id in lorem. Quisque aliquet neque vitae lectus tempus consectetur.</p>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </li>
-                                                        </ul>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <div class="clearfix card">
-                                                    <div class="left comment-img">
-                                                        <a href="#"><img src="{% static 'images/cmt2.jpg' %}" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="card-content comment-content">
-                                                        <div class="comment-meta">
-                                                            <p class="author"><a href="#">BDInfoSys</a> <span>says:</span>
+                                                            <p>
+                                                                {{ comentario }}
                                                             </p>
-                                                            <p class="date">March 25, 2015 at 07.50 am</p>
-                                                            <a href="#" class="tooltips tooltipped reply-btn" data-position="top" data-delay="50" data-tooltip="Reply"><i class="mdi-content-reply"></i></a>
-                                                        </div>
-                                                        <div class="comment-text">
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non enim ut enim fringilla adipiscing id in lorem. Quisque aliquet neque vitae lectus tempus consectetur.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <ul class="comment-list">
-                                                    <li>
-                                                        <div class="clearfix card">
-                                                            <div class="left comment-img">
-                                                                <a href="#"><img src="{% static 'images/cmt1.jpg' %}" alt="">
-                                                                </a>
-                                                            </div>
-                                                            <div class="card-content comment-content">
-                                                                <div class="comment-meta">
-                                                                    <p class="author"><a href="#">BDInfoSys</a> <span>says:</span>
-                                                                    </p>
-                                                                    <p class="date">March 25, 2015 at 07.50 am</p>
-                                                                    <a href="#" class="tooltips tooltipped reply-btn" data-position="top" data-delay="50" data-tooltip="Reply"><i class="mdi-content-reply"></i></a>
-                                                                </div>
-                                                                <div class="comment-text">
-                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non enim ut enim fringilla adipiscing id in lorem. Quisque aliquet neque vitae lectus tempus consectetur.</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="clearfix card">
-                                                            <div class="left comment-img">
-                                                                <a href="#"><img src="{% static 'images/cmt2.jpg' %}" alt="">
-                                                                </a>
-                                                            </div>
-                                                            <div class="card-content comment-content">
-                                                                <div class="comment-meta">
-                                                                    <p class="author"><a href="#">BDInfoSys</a> <span>says:</span>
-                                                                    </p>
-                                                                    <p class="date">March 25, 2015 at 07.50 am</p>
-                                                                    <a href="#" class="tooltips tooltipped reply-btn" data-position="top" data-delay="50" data-tooltip="Reply"><i class="mdi-content-reply"></i></a>
-                                                                </div>
-                                                                <div class="comment-text">
-                                                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non enim ut enim fringilla adipiscing id in lorem. Quisque aliquet neque vitae lectus tempus consectetur.</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li>
-                                                <div class="clearfix card">
-                                                    <div class="left comment-img">
-                                                        <a href="#"><img src="{% static 'images/unknown.jpg' %}" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="card-content comment-content">
-                                                        <div class="comment-meta">
-                                                            <p class="author"><a href="#">BDInfoSys</a> <span>says:</span>
-                                                            </p>
-                                                            <p class="date">March 25, 2015 at 07.50 am</p>
-                                                            <a href="#" class="tooltips tooltipped reply-btn" data-position="top" data-delay="50" data-tooltip="Reply"><i class="mdi-content-reply"></i></a>
-                                                        </div>
-                                                        <div class="comment-text">
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non enim ut enim fringilla adipiscing id in lorem. Quisque aliquet neque vitae lectus tempus consectetur.</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li>
-                                                <div class="clearfix card">
-                                                    <div class="left comment-img">
-                                                        <a href="#"><img src="{% static 'images/cmt1.jpg' %}" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="card-content comment-content">
-                                                        <div class="comment-meta">
-                                                            <p class="author"><a href="#">BDInfoSys</a> <span>says:</span>
-                                                            </p>
-                                                            <p class="date">March 25, 2015 at 07.50 am</p>
-                                                            <a href="#" class="tooltips tooltipped reply-btn" data-position="top" data-delay="50" data-tooltip="Reply"><i class="mdi-content-reply"></i></a>
-                                                        </div>
-                                                        <div class="comment-text">
-                                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean non enim ut enim fringilla adipiscing id in lorem. Quisque aliquet neque vitae lectus tempus consectetur.</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </li>
+                                            {% endfor %}
                                         </ul>
                                     </div>
                                 </div>
                                 <div class="contact-form  comment-reply-form">
                                     <h2 class="com-title">Leave a Reply<a href="#">Cancel Replay</a></h2>
-                                    <form action="#" class="cform-wrapper">
-                                        <div class="input-field">
-                                            <input id="name" type="text" class="validate input-box">
-                                            <label for="name" class="input-label">Name*</label>
-                                        </div>
-                                        <div class="input-field">
-                                            <input id="email" type="email" class="validate input-box">
-                                            <label for="email" class="input-label">Email*</label>
-                                        </div>
-                                        <div class="input-field">
-                                            <input id="website" type="text" class="validate input-box">
-                                            <label for="website" class="input-label">Website</label>
-                                        </div>
-                                        <div class="input-field textarea-input">
-                                            <textarea id="comment" class="materialize-textarea" style="height: 22px;"></textarea>
-                                            <label for="comment" class="input-label">Comment</label>
-                                        </div>
+                                    <form action="{% url 'vista_comentario_curso' curso.id %}" class="cform-wrapper" method="POST">
+                                        {% csrf_token %}
+                                        {{ commentForm }}
                                         <div class="input-field submit-wrap">
-                                            <button type="submit" class="waves-effect waves-light btn-large brand-bg white-text comm-submit regular-text">SEND MESSAGE</button>
+                                            <button type="submit" class="waves-effect waves-light btn-large brand-bg white-text comm-submit regular-text">SEND COMMENT</button>
                                         </div>
                                     </form>
                                 </div>
                             </article>
                         </div>
                         <!-- ./post container end-->
+
                         <!-- Sidebar start-->
                         <div class="col-sm-4">
                             <div class="primary-sidebar">
                                 <aside class="single-widget">
-                                    <h2 class="widget-title">RECENT POSTS</h2>
+                                    <h2 class="widget-title">Temario</h2>
                                     <ul>
+                                        {% if semanas.count > 0 %}
+                                        {% for semana in semanas %}
                                         <li>
-                                            <a href="">The Image Post One</a>
-                                            <span>March 24, 2015</span>
+                                            <a href="" id="modal-btn-{{ semana.id }}">{{ semana.nombre }}</a>
                                         </li>
+                                        {% endfor %}
+                                        {% else %}
                                         <li>
-                                            <a href="">The Image Post Two</a>
-                                            <span>March 24, 2015</span>
+                                            <a>Aún no se define el temario</a>
                                         </li>
-                                        <li>
-                                            <a href="">The Image Post Three</a>
-                                            <span>March 24, 2015</span>
-                                        </li>
-                                        <li>
-                                            <a href="">The Image Post Four</a>
-                                            <span>March 24, 2015</span>
-                                        </li>
-                                        <li>
-                                            <a href="">The Image Post Five</a>
-                                            <span>March 24, 2015</span>
-                                        </li>
+                                        {% endif%}
                                     </ul>
-                                </aside>
-                                <aside class="single-widget">
-                                    <h2 class="widget-title">CATEGORIES</h2>
-                                    <ul>
-                                        <li><a href="#">UX Design</a>
-                                        </li>
-                                        <li><a href="#">UI Design</a>
-                                        </li>
-                                        <li><a href="#">HTML</a>
-                                        </li>
-                                        <li><a href="#">Audio</a>
-                                        </li>
-                                        <li><a href="#">Video</a>
-                                        </li>
-                                    </ul>
-                                </aside>
-                                <aside class="single-widget">
-                                    <h2 class="widget-title">ARCHIVES</h2>
-                                    <ul>
-                                        <li><a href="#">March 24, 2015</a>
-                                        </li>
-                                        <li><a href="#">April 24, 2015</a>
-                                        </li>
-                                        <li><a href="#">May 24, 2015</a>
-                                        </li>
-                                        <li><a href="#">June 24, 2015</a>
-                                        </li>
-                                        <li><a href="#">July 24, 2015</a>
-                                        </li>
-                                    </ul>
-                                </aside>
-                                <aside class="single-widget">
-                                    <h2 class="widget-title">TAGS</h2>
-                                    <div class="widget-text">
-                                        <a href="#" class="tags">Art</a>
-                                        <a href="#" class="tags">Awesome</a>
-                                        <a href="#" class="tags">Style</a>
-                                        <a href="#" class="tags">Image</a>
-                                        <a href="#" class="tags">Design</a>
-                                        <a href="#" class="tags">Post</a>
-                                        <a href="#" class="tags">Three</a>
-                                        <a href="#" class="tags">Typhography</a>
-                                        <a href="#" class="tags">BDinfosys</a>
-                                    </div>
                                 </aside>
                             </div>
                         </div>
@@ -410,82 +143,52 @@ background-color: #000000;
                 </div>
             </div>
             <!-- ./container end-->
+            {% if semanas.count > 0 %}
+            {% for semana in curso.get_semanas %}
+                <div id="Modal{{ semana.id }}" class="modal white">
+                    <div class="model-img"></div>
+                    <div class="modal-content">
+                        <div class="row">
+                            <div class="col-sm-10">
+                                <div class="primary-sidebar">
+                                    <aside class="single-widget">
+                                        <h2 class="widget-title">Material para esta semana</h2>
+                                        <ul>
+                                            {% for archivo in semana.get_archivos %}
+                                                <li style="color:#889;">{{ archivo }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+            {% endif%}
         </section>
         <!-- ./Blog Post Container end-->
         {% include 'footer.html' %} 
     </div>
+{% endblock %}
+{% block js %}
+    {% if semanas.count > 0 %}
+    {% for semana in curso.get_semanas %}
+    <script type="text/javascript">
+                $('#modal-btn-{{ semana.id }}').on('click',function(e){                    
+                    e.preventDefault();
+                    var $this = $(this);
+                    $('#Modal{{ semana.id }}').openModal({
+                        dismissible: true,
+                        opacity: '.4',
+                        in_duration: 400,
+                        out_duration: 400,
+                        ready: function() {
+                        }
+                    });
+                });
+    </script>
+    {% endfor %}
+    {% endif%}
 
-    <!--#app end -->
-    <div class="material-tooltip" style="opacity: 0; margin-top: 0px; margin-left: 0px; display: none;">
-        <span>Reply</span>
-        <div class="backdrop" style="top: 0px; left: 0px; opacity: 0; transform: scale(1); display: none;"></div>
-    </div>
-    <div class="material-tooltip">
-        <span>Reply</span>
-        <div class="backdrop" style="top: 0px; left: 0px;"></div>
-    </div>
-    <div class="material-tooltip">
-        <span>Reply</span>
-        <div class="backdrop" style="top: 0px; left: 0px;"></div>
-    </div>
-    <div class="material-tooltip">
-        <span>Reply</span>
-        <div class="backdrop" style="top: 0px; left: 0px;"></div>
-    </div>
-    <div class="material-tooltip">
-        <span>Reply</span>
-        <div class="backdrop" style="top: 0px; left: 0px;"></div>
-    </div>
-    <div class="material-tooltip">
-        <span>Reply</span>
-        <div class="backdrop" style="top: 0px; left: 0px;"></div>
-    </div>
-    <div class="material-tooltip" style="opacity: 0; margin-top: 0px; margin-left: 0px; display: none;">
-        <span>Reply</span>
-        <div class="backdrop" style="top: 0px; left: 0px; opacity: 0; transform: scale(1); display: none;"></div>
-    </div>
-    <div class="material-tooltip">
-        <span>Reply</span>
-        <div class="backdrop" style="top: 0px; left: 0px;"></div>
-    </div>
-    <div class="material-tooltip">
-        <span>Facebook</span>
-        <div class="backdrop" style="top: 0px; left: 0px;"></div>
-    </div>
-    <div class="material-tooltip">
-        <span>Linkdin</span>
-        <div class="backdrop" style="top: 0px; left: 0px;"></div>
-    </div>
-    <div class="material-tooltip">
-        <span>Twitter</span>
-        <div class="backdrop" style="top: 0px; left: 0px;"></div>
-    </div>
-    <div class="material-tooltip">
-        <span>Google Plus</span>
-        <div class="backdrop" style="top: 0px; left: 0px;"></div>
-    </div>
-    <div class="material-tooltip">
-        <span>Dribbble</span>
-        <div class="backdrop" style="top: 0px; left: 0px;"></div>
-    </div>
-    <div class="material-tooltip">
-        <span>Behance</span>
-        <div class="backdrop" style="top: 0px; left: 0px;"></div>
-    </div>
-    <div class="hiddendiv common" style="width: 750px;"></div>
-    <ul id="dropdown1" class="inline-menu submenu-ul dropdown-content">
-        <li><a href="#">Demo link 1</a>
-        </li>
-        <li><a href="#">Demo link 2</a>
-        </li>
-        <li><a href="#">Demo link 3</a>
-        </li>
-    </ul>
-    <div class="drag-target" style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
-    <div id="ascrail2000" class="nicescroll-rails" style="width: 9px; z-index: 9999999; cursor: default; position: fixed; top: 0px; height: 100%; right: 0px; opacity: 0;">
-        <div style="position: relative; top: 0px; float: right; width: 7px; height: 115px; border: 1px solid rgb(255, 255, 255); border-radius: 5px; background-color: rgb(66, 66, 66); background-clip: padding-box;"></div>
-    </div>
-    <div id="ascrail2000-hr" class="nicescroll-rails" style="height: 9px; z-index: 9999999; position: fixed; left: 0px; width: 100%; bottom: 0px; cursor: default; display: none; opacity: 0;">
-        <div style="position: relative; top: 0px; height: 7px; width: 1360px; border: 1px solid rgb(255, 255, 255); border-radius: 5px; background-color: rgb(66, 66, 66); background-clip: padding-box;"></div>
-    </div>
 {% endblock %}

@@ -15,7 +15,7 @@
         </div>
     </div>
     <!--preloader end-->
-    <div id="app">
+    <main id="app" class="main-section">
         {% include 'navbar.html' %}
         <!-- Banner start -->
         <section id="banner" class="root-sec brand-bg padd-tb-73 blogpage-banner-wrap">
@@ -31,25 +31,26 @@
             </div>
         </section>
         <!--./Banner end-->        
+
+
         {% if cursos %}
-        <div class="div_cursos">
-            <section class="bottom-50 root-sec grey lighten-5 blogpage-posts-wrap">
+            <section id="div_cursos" class="bottom-50 root-sec grey lighten-5 blogpage-posts-wrap">
                 <div class="container">
                     <div class="row">
                         <div id="blog-posts" class="clearfix all-blog-post blog-inner without-sidebar" style="position: relative; height: 1453.875px;">
-                            
+                            <div id="div_cursos">
                             {% for curso in cursos %}
                                 <article class="col-sm-4 single-card-box single-post">
                                     <div class="card">
                                         <div class="card-image">
                                             <div class="card-img-wrap">
                                                 <div class="blog-post-thumb waves-effect waves-block waves-light">
-                                                    <a href="{% url 'vista_curso' %}">
+                                                    <a href="{% url 'vista_curso' curso.id %}">
                                                         <img class="activator" src="{% static 'uploads/' %}{{ curso.img }}" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="post-body">
-                                                    <a href="{% url 'vista_curso' %}" class="post-title-link brand-text"> 
+                                                    <a href="{% url 'vista_curso' curso.id %}" class="post-title-link brand-text"> 
                                                         <h2 class="post-title">{{ curso.nombre }}</h2>
                                                     </a>
                                                     <p class="post-content">{{ curso.descripcion }}</p>
@@ -58,46 +59,54 @@
                                         </div>
                                         <div class="clearfix card-content">
                                             
-                                            <a href="{% url 'vista_curso' %}" class="brand-text right waves-effect">ir al curso</a>
+                                            <a href="{% url 'vista_curso' curso.id %}" class="brand-text right waves-effect">ir al curso</a>
                                         </div>
                                     </div>
                                 </article>
                             {% endfor %}
-
-                            {% if talleres %}
-                                {% for taller in talleres %}
-                                    <article class="col-sm-4 single-card-box single-post">
-                                        <div class="card">
-                                            <div class="card-image">
-                                                <div class="card-img-wrap">
-                                                    <div class="blog-post-thumb waves-effect waves-block waves-light">
-                                                        <a href="{% url 'vista_taller' taller.id %}">
-                                                            <img class="activator" src="{% static 'uploads/' %}{{ taller.img }}" alt="">
-                                                        </a>
-                                                    </div>
-                                                    <div class="post-body">
-                                                        <a href="{% url 'vista_taller' taller.id %}" class="post-title-link brand-text"> 
-                                                            <h2 class="post-title">{{ taller.nombre }}</h2>
-                                                        </a>
-                                                        <p class="post-content">{{ taller.descripcion }}</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="clearfix card-content">
-                                                
-                                                <a href="{% url 'vista_taller' taller.id %}" class="brand-text right waves-effect">ir al taller</a>
-                                            </div>
-                                        </div>
-                                    </article>
-                                {% endfor %}
-                            {% endif %}
-
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-        </div>
+        {% endif %}
+
+
+        {% if talleres %}
+            <section id="div_talleres" class="bottom-50 root-sec grey lighten-5 blogpage-posts-wrap">
+                <div class="container">
+                    <div class="row">
+                        <div id="blog-posts" class="clearfix all-blog-post blog-inner without-sidebar">
+                        {% for taller in talleres %}
+                            <article class="col-sm-4 single-card-box single-post">
+                                <div class="card">
+                                    <div class="card-image">
+                                        <div class="card-img-wrap">
+                                            <div class="blog-post-thumb waves-effect waves-block waves-light">
+                                                <a href="{% url 'vista_taller' taller.id %}">
+                                                    <img class="activator" src="{% static 'uploads/' %}{{ taller.img }}" alt="">
+                                                </a>
+                                            </div>
+                                            <div class="post-body">
+                                                <a href="{% url 'vista_taller' taller.id %}" class="post-title-link brand-text"> 
+                                                    <h2 class="post-title">{{ taller.nombre }}</h2>
+                                                </a>
+                                                <p class="post-content">{{ taller.descripcion }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix card-content">
+                                        
+                                        <a href="{% url 'vista_taller' taller.id %}" class="brand-text right waves-effect">ir al taller</a>
+                                    </div>
+                                </div>
+                            </article>
+                        {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </section>
         {% endif %}
         {% include 'footer.html' %}
-    </div>
+    </main>
 {% endblock %}

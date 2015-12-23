@@ -22,7 +22,7 @@ def taller_specific(request, *args, **kwargs):
         like_me=0
     commentForm = CommentTallerForm()
     context = {
-        'is_blog': 'True',
+        'is_single': 'True',
         'taller': taller,
         'semanas':semanas,
         'commentForm':commentForm,

@@ -56,6 +56,11 @@ class Curso(models.Model):
     def __unicode__(self):
         return self.nombre
 
+    @property
+    def get_semanas(self):
+        semanas = SemanaCurso.objects.filter(curso=self)
+        return semanas
+
     class Meta:
         ordering = ['fecha_creacion']
         verbose_name = u'Curso'
@@ -75,6 +80,11 @@ class SemanaCurso(models.Model):
         max_length=200,
         verbose_name=_('Semana del curso')
     )
+
+    @property
+    def get_archivos(self):
+        archivos = ArchivoSemana.objects.filter(semana=self.id)
+        return archivos
 
     def __unicode__(self):
         return "%s del curso %s"%(self.nombre, self.curso.nombre)
@@ -100,3 +110,55 @@ class ArchivoSemana(models.Model):
         path = self.archivo.name
         filename = path.replace('curso/archivos/', '')
         return filename
+
+
+class ComentarioCurso(models.Model):
+    """docstring for ComentarioTaller"""
+    curso = models.ForeignKey(
+        Curso,
+        verbose_name=_('curso'),
+        on_delete=models.PROTECT,
+        null=False,
+        blank=False
+    )
+
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        verbose_name=_('user'),
+        on_delete=models.PROTECT,
+        null=False,
+        blank=False
+    )
+
+    comentario = models.CharField(
+        max_length=200,
+        verbose_name=_('Semana del curso')
+    )
+
+    fecha_creacion = models.DateTimeField(
+        blank=False,
+        null=False,
+        auto_now=False,
+        auto_now_add=True
+    )
+
+    def __unicode__(self):
+        return self.comentario
+
+class LikeCurso(models.Model):
+    """docstring for LikeTaller"""
+    author = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        verbose_name=_('user'),
+        on_delete=models.PROTECT,
+        null=False,
+        blank=False
+    )
+
+    curso = models.ForeignKey(
+        Curso,
+        verbose_name=_('curso'),
+        on_delete=models.PROTECT,
+        null=False,
+        blank=False
+    )

@@ -35,7 +35,7 @@
         <link rel="stylesheet" href="{% static 'css/responsive.css' %}" media="screen,projection">
         <link rel="stylesheet" href="{% static 'css/color1.css' %}" media="screen,projection">
 
-        {% if is_blog %}
+        {% if is_blog or is_single %}
         <link rel="stylesheet" href="{% static 'css/blog.css' %}" media="screen,projection">
         {% endif %}
         
