@@ -43,10 +43,15 @@
                                     <div class="center-align home-content">
                                         <h1 class="home-title">Emprende <span>tu espíritu</span></h1>
                                         <h2 class="home-subtitle">Cursos y talleres de superación personal y profesional</h2>
+                                        {% if user.is_authenticated %}
+                                        <a href="{% url 'vista_dashboard' %}" class="btn waves-effect waves-light btn-large brand-bg white-text regular-text">
+                                            Entrar
+                                        </a>
+                                        {% else %}
                                         <a href="" id="login-btn" class="btn waves-effect waves-light btn-large brand-bg white-text regular-text">
                                             Entrar
                                         </a>
-                                        
+                                        {% endif %}
                                     </div>
                                 </div>
                             </div>
@@ -604,7 +609,7 @@
                                                     <i class="mdi-editor-insert-emoticon"></i>
                                                     <span class="num countNumb">150</span>
                                                 </div>
-                                                <div class="context">Happy clients</div>
+                                                <div class="context">Likes en cursos</div>
                                             </div>
                                         </div>
                                     </div>
@@ -618,7 +623,7 @@
                                                     <i class="mdi-action-wallet-travel"></i>
                                                     <span class="num countNumb">229</span>
                                                 </div>
-                                                <div class="context">Project Completed</div>
+                                                <div class="context">Visitas a la pagína</div>
                                             </div>
                                         </div>
                                     </div>
@@ -630,9 +635,9 @@
                                             <div class="funfact-box-inner">
                                                 <div class="clearfix ">
                                                     <i class="mdi-action-wallet-giftcard"></i>
-                                                    <span class="num countNumb">79</span>
+                                                    <span class="num countNumb">19</span>
                                                 </div>
-                                                <div class="context">Award Won</div>
+                                                <div class="context">Suscriptores</div>
                                             </div>
                                         </div>
                                     </div>
@@ -896,7 +901,8 @@
                                         <!-- Contact Form start -->
                                         <div class="col-sm-5">
                                             <div class="clearfix card-panel grey lighten-5 cform-wrapper">
-                                                <form action="#" id="contactForm" novalidate="">
+                                                <form action="{% url 'vista_email' %}" novalidate="" method="POST">
+                                                    {% csrf_token %}
                                                     <div class="input-field">
                                                         <input id="contact_name" type="text" name="contactName" class="validate input-box">
                                                         <label for="contact_name" class="input-label">Nombre</label>
@@ -910,7 +916,9 @@
                                                         <label for="textarea1" class="input-label">Mensaje</label>
                                                     </div>
                                                     <div class="input-field submit-wrap clearfix">
-                                                        <button type="submit" class="left waves-effect btn-flat brand-text submit-btn">Enviar mensaje</button>
+                                                        <button type="submit" name="btn-contact" class="left waves-effect btn-flat brand-text submit-btn">
+                                                            Enviar mensaje
+                                                        </button>
                                                         <div class="right form-loader-area">
                                                             <svg class="circular size-20" height="20" width="20">
                                                                 <circle class="path" cx="10" cy="10" r="7" fill="none" stroke-width="3" stroke-miterlimit="10"></circle>
@@ -954,17 +962,6 @@
             <span>Google Plus</span>
             <div class="backdrop" style="top: 0px; left: 0px;"></div>
         </div>
-
-        <div class="hiddendiv common"></div>
-        <ul id="dropdown1" class="inline-menu submenu-ul dropdown-content">
-            <li>Home</li>
-            <li><a href="{% url 'vista_blog' %}">All Blog</a>
-            </li>
-            <li><a href="{% url 'vista_blog' %}">Blog with Sidebar</a>
-            </li>
-            <li><a href="{% url 'vista_entrada' %}">Single Blog</a>
-            </li>
-        </ul>
         
 {% endblock %}
 

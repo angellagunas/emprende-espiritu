@@ -758,6 +758,7 @@ $('#contactForm').on('submit', function(e){
     e.preventDefault();
     var $this = $(this),
         data = $(this).serialize(),
+        action = $this.attr('action'),
         name = $this.find('#contact_name'),
         email = $this.find('#email'),
         message = $this.find('#textarea1'),
@@ -787,9 +788,10 @@ $('#contactForm').on('submit', function(e){
         }
     }
 
+
     $.ajax({
         type: "POST",
-        url: "inc/sendEmail.php",
+        url: action,
         data: data
     }).done(function(res){
 

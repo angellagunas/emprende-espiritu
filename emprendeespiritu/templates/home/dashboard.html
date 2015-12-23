@@ -44,12 +44,12 @@
                                         <div class="card-image">
                                             <div class="card-img-wrap">
                                                 <div class="blog-post-thumb waves-effect waves-block waves-light">
-                                                    <a href="{% url 'vista_entrada' %}">
+                                                    <a href="{% url 'vista_curso' %}">
                                                         <img class="activator" src="{% static 'uploads/' %}{{ curso.img }}" alt="">
                                                     </a>
                                                 </div>
                                                 <div class="post-body">
-                                                    <a href="{% url 'vista_entrada' %}" class="post-title-link brand-text"> 
+                                                    <a href="{% url 'vista_curso' %}" class="post-title-link brand-text"> 
                                                         <h2 class="post-title">{{ curso.nombre }}</h2>
                                                     </a>
                                                     <p class="post-content">{{ curso.descripcion }}</p>
@@ -58,7 +58,7 @@
                                         </div>
                                         <div class="clearfix card-content">
                                             
-                                            <a href="{% url 'vista_entrada' %}" class="brand-text right waves-effect">ir al curso</a>
+                                            <a href="{% url 'vista_curso' %}" class="brand-text right waves-effect">ir al curso</a>
                                         </div>
                                     </div>
                                 </article>
@@ -71,12 +71,12 @@
                                             <div class="card-image">
                                                 <div class="card-img-wrap">
                                                     <div class="blog-post-thumb waves-effect waves-block waves-light">
-                                                        <a href="{% url 'vista_entrada' %}">
+                                                        <a href="{% url 'vista_taller' taller.id %}">
                                                             <img class="activator" src="{% static 'uploads/' %}{{ taller.img }}" alt="">
                                                         </a>
                                                     </div>
                                                     <div class="post-body">
-                                                        <a href="{% url 'vista_entrada' %}" class="post-title-link brand-text"> 
+                                                        <a href="{% url 'vista_taller' taller.id %}" class="post-title-link brand-text"> 
                                                             <h2 class="post-title">{{ taller.nombre }}</h2>
                                                         </a>
                                                         <p class="post-content">{{ taller.descripcion }}</p>
@@ -85,7 +85,7 @@
                                             </div>
                                             <div class="clearfix card-content">
                                                 
-                                                <a href="{% url 'vista_entrada' %}" class="brand-text right waves-effect">ir al taller</a>
+                                                <a href="{% url 'vista_taller' taller.id %}" class="brand-text right waves-effect">ir al taller</a>
                                             </div>
                                         </div>
                                     </article>

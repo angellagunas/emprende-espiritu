@@ -60,3 +60,43 @@ class Curso(models.Model):
         ordering = ['fecha_creacion']
         verbose_name = u'Curso'
         verbose_name_plural = u'Cursos'
+
+class SemanaCurso(models.Model):
+    """semanas que tendra un curso"""
+    curso = models.ForeignKey(
+        Curso,
+        verbose_name=_('curso'),
+        on_delete=models.PROTECT,
+        null=False,
+        blank=False
+    )
+
+    nombre = models.CharField(
+        max_length=200,
+        verbose_name=_('Semana del curso')
+    )
+
+    def __unicode__(self):
+        return "%s del curso %s"%(self.nombre, self.curso.nombre)
+
+class ArchivoSemana(models.Model):
+    """docstring for ArchivoSemana"""
+    semana = models.ForeignKey(
+        SemanaCurso,
+        verbose_name=_('semana'),
+        on_delete=models.PROTECT,
+        null=False,
+        blank=False
+    )
+
+    archivo = models.FileField(
+        upload_to='curso/archivos/',
+        null=True,
+        blank=True,
+        verbose_name=_('Archivo')
+    )
+
+    def __unicode__(self):
+        path = self.archivo.name
+        filename = path.replace('curso/archivos/', '')
+        return filename

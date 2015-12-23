@@ -13,6 +13,10 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 
+from celery.schedules import crontab
+
+from emprendeespiritu.app.utils.tz import get_utc_crontab_kwargs
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
@@ -38,6 +42,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'compressor',
+    'djcelery',
+    'djrill',
+    'kombu.transport.django',
     'emprendeespiritu.app.blog',
     'emprendeespiritu.app.comentarios',
     'emprendeespiritu.app.cursos',
@@ -72,6 +79,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.contrib.auth.context_processors.auth',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -104,9 +112,9 @@ REST_FRAMEWORK = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-MX'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Mexico_City'
 
 USE_I18N = True
 
@@ -114,12 +122,44 @@ USE_L10N = True
 
 USE_TZ = True
 
+# Celery scheduled tasks
+CELERY_TIMEZONE = 'CST'
+
+CELERY_ALWAYS_EAGER = True
+
+CELERY_ACKS_LATE = True
+
+CELERYBEAT_SCHEDULE = {
+    'send-daily-mails-courses': {
+        'task': 'emprendeespiritu.app.email.tasks.send_daily_mails',
+        'schedule': crontab(**get_utc_crontab_kwargs(hour=17, minute=53))
+    },
+}
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/assets/'
 
+MANDRILL_API_KEY = 'dElSPvXjpLzqnJpo8rpzgg'
+
+#EMAIL_BACKEND = 'djrill.mail.backends.djrill.DjrillBackend'
+EMAIL_HOST = "localhost"
+DEFAULT_FROM_EMAIL = "pruebas.emprende.espiritu@gmail.com"
+EMAIL_PORT = 25
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'pruebas.emprende.espiritu@gmail.com'
+EMAIL_HOST_PASSWORD = 'Emprende2015'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+
+# Batch emailing
+MAX_EMAILS_SENT_PER_HOUR = 75
+
+EMAILS_SENDING_INTERVAL = 15
+
+BATCH_ACTUALIZATION_INTERVAL = 10
 
 
 STATICFILES_DIRS = (
@@ -139,3 +179,8 @@ MEDIA_ROOT = os.path.realpath(
 COMPRESS_ROOT = os.path.realpath(os.path.join(BASE_DIR, 'media','assets'))
 
 COMPRESS_ENABLED = False
+
+#CELERY
+BROKER_URL = 'django://'
+CELERY_RESULT_BACKEND='djcelery.backends.database:DatabaseBackend'
+CELERYBEAT_SCHEDULER = 'djcelery.schedulers.DatabaseScheduler'

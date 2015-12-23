@@ -1,0 +1,3 @@
+El usuario {{ fullname }} te ha enviado el siguiente mensaje:
+{{ email }}
+{{ msg }}
