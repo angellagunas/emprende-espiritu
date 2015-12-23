@@ -56,6 +56,11 @@ class Taller(models.Model):
     def __unicode__(self):
         return self.nombre
 
+    @property
+    def get_semanas(self):
+        semanas = SemanaTaller.objects.filter(taller=self)
+        return semanas
+
     class Meta:
         ordering = ['fecha_creacion']
         verbose_name = u'Taller'
@@ -75,6 +80,11 @@ class SemanaTaller(models.Model):
         max_length=200,
         verbose_name=_('Semana del taller')
     )
+
+    @property
+    def get_archivos(self):
+        archivos = ArchivoSemana.objects.filter(semana=self.id)
+        return archivos
 
     def __unicode__(self):
         return "%s del taller %s"%(self.nombre, self.taller.nombre)

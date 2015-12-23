@@ -64,9 +64,20 @@
                                     </li>
                                     <!-- mini profile end-->
                                     {% if is_dashboard %}
-                                        <li class=""><a href="#div_cursos" data-section="#div_cursos" class="menu-smooth-scroll"><i class="fa fa-pencil fa-fw"></i>Cursos</a>
+                                        <li class=""><a data-section="#div_cursos" class="menu-smooth-scroll"><i class="fa fa-pencil fa-fw"></i>Cursos</a>
                                         </li>
-                                        <li class=""><a href="#div_talleres" data-section="#div_talleres" class="menu-smooth-scroll"><i class="fa fa-paper-plane fa-fw"></i>Talleres</a>
+                                        <li class=""><a data-section="#div_talleres" class="menu-smooth-scroll"><i class="fa fa-paper-plane fa-fw"></i>Talleres</a>
+                                        </li>
+                                    {% elif is_single %}
+                                        <li>
+                                            <a href="{% url 'vista_dashboard' %}">
+                                                <i class="fa fa-paper-plane fa-fw"></i>Dashboard</a>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'vista_index' %}">
+                                                <i class="fa fa-paper-plane fa-fw"></i>Home</a>
+                                            </a>
                                         </li>
                                     {% else %}                                    
                                         <li class="">
@@ -111,6 +122,17 @@
                                         <li class="">
                                             <a href="#div_talleres" data-section="#div_talleres" class="menu-smooth-scroll">
                                                 <i class="fa fa-paper-plane fa-fw"></i>Talleres
+                                            </a>
+                                        </li>
+                                    {% elif is_single %}
+                                        <li>
+                                            <a href="{% url 'vista_dashboard' %}">
+                                                <i class="fa fa-paper-plane fa-fw"></i>Dashboard</a>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'vista_index' %}">
+                                                <i class="fa fa-paper-plane fa-fw"></i>Home</a>
                                             </a>
                                         </li>
                                     {% else %}
