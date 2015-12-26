@@ -1,0 +1,39 @@
+<div id="Modal-Pay-course" class="modal white">
+    <div class="model-img"></div>
+    <div class="modal-content">
+        <div class="row">
+            <div class="col-sm-11">
+                <div class="primary-sidebar">
+                    <aside class="single-widget">
+                        {% if not is_request %}
+                        <h1 class="widget-title">Instrucciones:</h1>
+                        <ul>
+                            <li style="border-bottom:0px">
+                                <p>
+                                    Una vez que envies la solicitud tienes 10 días para realizar el pago, después de este periodo la solicitud no será valida.
+                                </p>
+                            </li>
+                        </ul>
+                        <ul class="clearfix right">
+                            <li style="border-bottom:0px">
+                                <a href="{% url 'request_curso' curso.id %}">
+                                    <button class="btn btn-lg btn-primary" type="submit">
+                                        Solicitar
+                                    </button>
+                                </a>
+                            </li>
+                        </ul>
+                        {% else %}
+                        <h1 class="widget-title">Continuar con la solicitud...</h1>
+                        <ul class="clearfix center">
+                            <li>
+                               {% include 'curso/buttonPaypal.html' %} 
+                            </li>
+                        </ul>
+                        {% endif %}
+                    </aside>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

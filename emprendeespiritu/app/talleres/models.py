@@ -61,6 +61,16 @@ class Taller(models.Model):
         semanas = SemanaTaller.objects.filter(taller=self)
         return semanas
 
+    @property
+    def get_comentarios(self):
+        comentarios = ComentarioTaller.objects.filter(taller=self)
+        return comentarios
+
+    @property
+    def get_likes(self):
+        likes = LikeTaller.objects.filter(taller=self).count()
+        return likes
+
     class Meta:
         ordering = ['fecha_creacion']
         verbose_name = u'Taller'
@@ -162,4 +172,35 @@ class LikeTaller(models.Model):
         blank=False
     )
 
-        
+class SuscripcionTaller(models.Model):
+    """docstring for SuscripcionTaller"""
+    usuario = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        verbose_name=_('user'),
+        on_delete=models.PROTECT,
+        null=False,
+        blank=False
+    )
+
+    taller = models.ForeignKey(
+        Taller,
+        verbose_name=_('taller'),
+        on_delete=models.PROTECT,
+        null=False,
+        blank=False
+    )
+
+    is_request = models.BooleanField(
+        default=True
+    )
+
+    is_paid = models.BooleanField(
+        default=False
+    )
+
+    fecha_creacion = models.DateField(
+        blank=False,
+        null=False,
+        auto_now=False,
+        auto_now_add=True
+    )

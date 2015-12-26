@@ -4,8 +4,9 @@ from django.db import models
 from django.conf import settings
 from django.utils.translation import ugettext_lazy as _
 from localflavor.mx.models import MXStateField, MXZipCodeField
-from emprendeespiritu.app.cursos.models import Curso
+from emprendeespiritu.app.cursos.models import Curso, SuscripcionCurso
 from emprendeespiritu.app.talleres.models import Taller
+
 
 class Pais(models.Model):
     nombre = models.CharField(
@@ -67,6 +68,15 @@ class UserProfile(models.Model):
         default=True
     )
 
+    @property
+    def get_my_courses(self):
+        cursos = SuscripcionCurso.objects.filter(
+            usuario=self.user.id
+        ).values_list('id', flat=True)
+
+        return cursos
+
+
 class CursoSuscrito(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL,
@@ -80,6 +90,7 @@ class CursoSuscrito(models.Model):
         null=False,
         blank=False
     )
+
 
 class TallerSuscrito(models.Model):
     user = models.ForeignKey(

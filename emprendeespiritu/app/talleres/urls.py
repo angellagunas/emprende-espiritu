@@ -6,4 +6,5 @@ urlpatterns = patterns(
     url(r'^comentario/(?P<taller>[0-9]+)/$', 'comentario_taller', name='vista_comentario_taller'),
     url(r'^like/(?P<taller>[0-9]+)/$', 'like_taller', name='like_taller'),
     url(r'^dislike/(?P<taller>[0-9]+)/$', 'dislike_taller', name='dislike_taller'),
+    url(r'^suscribe/(?P<taller>[0-9]+)/$', 'request_taller', name='request_taller'),
 	)

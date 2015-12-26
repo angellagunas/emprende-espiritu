@@ -1098,7 +1098,7 @@ header.nav.hide-menu {
 .portfolio-wrap .modal {
     padding: 0;
     max-height : 85%;
-    width: 550px;
+    width: 5500px;
 }
 
 .modal .model-img {
@@ -1119,8 +1119,6 @@ header.nav.hide-menu {
 .modal .modal-content {
     padding: 0 20px 30px;
     border-bottom: 1px solid #eeeeee;
-
-
 }
 .modal .modal-content p {
     color: #727272;

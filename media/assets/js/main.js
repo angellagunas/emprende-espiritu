@@ -716,6 +716,19 @@ $(window).load(function(){
             }
         });
     });
+
+    $('#sign-btn').on('click',function(e){
+        e.preventDefault();
+        var $this = $(this);
+        $('#signModal').openModal({
+            dismissible: true,
+            opacity: '.4',
+            in_duration: 400,
+            out_duration: 400,
+            ready: function() {
+            }
+        });
+    });
     
 
     // skills animation
