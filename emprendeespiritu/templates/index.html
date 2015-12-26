@@ -34,6 +34,18 @@
                 </div>
             </div>
 
+            <div id="signModal" class="modal white">
+                <div class="model-img"></div>
+                <div class="modal-content">
+                    <div class="row">
+                        <div class="col-md-1 col-lg-2"></div>
+                        <div class="col-sm-12 col-md-10 col-lg-8">
+                            {% include 'home/sign_form.html' %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <section id="home" class="scroll-section root-sec grey lighten-5 home-wrap">
                 <div class="sec-overlay">
                     <div class="container">
@@ -44,7 +56,7 @@
                                         <h1 class="home-title">Emprende <span>tu espíritu</span></h1>
                                         <h2 class="home-subtitle">Cursos y talleres de superación personal y profesional</h2>
                                         {% if user.is_authenticated %}
-                                        <a href="{% url 'vista_dashboard' %}" class="btn waves-effect waves-light btn-large brand-bg white-text regular-text">
+                                        <a href="{% url 'vista_cursos_talleres' %}" class="btn waves-effect waves-light btn-large brand-bg white-text regular-text">
                                             Entrar
                                         </a>
                                         {% else %}
@@ -123,15 +135,6 @@
                 <!-- .container end -->
             </section>
             <!-- #about Section end -->
-
-
-
-
-
-
-
-
-
 
             <!-- Resume Section start -->
             <section id="resume" class="scroll-section ">
@@ -321,86 +324,45 @@
                     <div class="container">
                         <div class="row">
                             <div class="col-sm-12">
-                                <ul class="clearfix protfolio-item" id="protfolio-msnry" style="position: relative; height: 548.3125px;">
+                                <ul class="clearfix protfolio-item" id="protfolio-msnry">
                                     <!-- Single Portfolio-->
-                                    <li class="single-port-item category-1 category-3" style="position: absolute; left: 0px; top: 0px;">
-                                        <a href="#portfolioModal" class="waves-effect waves-block waves-light modal-trigger" data-image-source="http://placehold.it/650x350" data-title="Your awesome portfolio title" data-content="A portfolio is a collection of documents and writing that you assemble in order to demonstrate that you have the appropriate prior." data-demo-link="#">
-                                            <!-- Portfolio pop-up content-->
-                                            <div class="protfolio-image">
-                                                <img src="{% static 'images/pf1.jpg' %}" alt="portfolio"> <!-- portfolio thumbnail-->
-                                                <div class="protfolio-content waves-effect waves-block waves-light">
-                                                    <div class="protfolio-content__inner">
-                                                        <h2 class="p-title">item name</h2>
+                                    {% for taller in talleres %}
+                                        <li class="single-port-item category-2">
+                                            <a href="{% url 'vista_taller' taller.id %}" class="waves-effect waves-block waves-light" data-title="{{ taller }}" data-content="{{ taller.descripcion }}">
+                                                <!-- Portfolio pop-up content-->
+                                                <div class="protfolio-image">
+                                                    <img src="{% static 'uploads/' %}{{ taller.img }}" alt="{{ taller }}"> <!-- portfolio thumbnail-->
+                                                    <div class="protfolio-content waves-effect waves-block waves-light">
+                                                        <div class="protfolio-content__inner">
+                                                            <h2 class="p-title">{{ taller }}</h2>
+                                                        </div>
                                                     </div>
+                                                    <div class="p-overlay"></div>
                                                 </div>
-                                                <div class="p-overlay"></div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <!--/ single portfolio -->
-                                    <!-- Single Portfolio-->
-                                    <li class="single-port-item category-2 category-1" style="position: absolute; left: 379px; top: 0px;">
-                                        <a href="#portfolioModal" class="waves-effect waves-block waves-light modal-trigger" data-image-source="http://placehold.it/650x350" data-title="Your awesome portfolio title" data-content="A portfolio is a collection of documents and writing that you assemble in order to demonstrate that you have the appropriate prior." data-demo-link="#">
-                                            <div class="protfolio-image">
-                                                <img src="{% static 'images/pf2.jpg' %}" alt="portfolio">
-                                                <div class="protfolio-content waves-effect waves-block waves-light">
-                                                    <div class="protfolio-content__inner">
-                                                        <h2 class="p-title">item name</h2>
+                                            </a>
+                                        </li>
+                                    {% endfor %}
+
+                                    {% for curso in cursos %}
+                                        <li class="single-port-item category-3">
+                                            <a href="{% url 'vista_curso' curso.id %}" class="waves-effect waves-block waves-light" data-title="{{ curso }}" data-content="{{ curso.descripcion }}">
+                                                <div class="protfolio-image">
+                                                    <img src="{% static 'uploads/' %}{{ curso.img }}" alt="{{ curso }}">
+                                                    <div class="protfolio-content waves-effect waves-block waves-light">
+                                                        <div class="protfolio-content__inner">
+                                                            <h2 class="p-title">{{ curso }}</h2>
+                                                        </div>
                                                     </div>
+                                                    <div class="p-overlay"></div>
                                                 </div>
-                                                <div class="p-overlay"></div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <!--/ single portfolio -->
-                                    <!-- Single Portfolio-->
-                                    <li class="single-port-item category-1 category-2" style="position: absolute; left: 759px; top: 0px;">
-                                        <a href="#portfolioModal" class="waves-effect waves-block waves-light modal-trigger" data-image-source="http://placehold.it/650x350" data-title="Your awesome portfolio title" data-content="A portfolio is a collection of documents and writing that you assemble in order to demonstrate that you have the appropriate prior." data-demo-link="#">
-                                            <div class="protfolio-image">
-                                                <img src="{% static 'images/pf3.jpg' %}" alt="portfolio">
-                                                <div class="protfolio-content waves-effect waves-block waves-light">
-                                                    <div class="protfolio-content__inner">
-                                                        <h2 class="p-title">item name</h2>
-                                                    </div>
-                                                </div>
-                                                <div class="p-overlay"></div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <!--/ single portfolio -->
-                                    <!-- Single Portfolio-->
-                                    <li class="single-port-item category-3" style="position: absolute; left: 0px; top: 274px;">
-                                        <a href="#portfolioModal" class="waves-effect waves-block waves-light modal-trigger" data-image-source="http://placehold.it/650x350" data-title="Your awesome portfolio title" data-content="A portfolio is a collection of documents and writing that you assemble in order to demonstrate that you have the appropriate prior." data-demo-link="#">
-                                            <div class="protfolio-image">
-                                                <img src="{% static 'images/pf4.jpg' %}" alt="portfolio">
-                                                <div class="protfolio-content waves-effect waves-block waves-light">
-                                                    <div class="protfolio-content__inner">
-                                                        <h2 class="p-title">item name</h2>
-                                                    </div>
-                                                </div>
-                                                <div class="p-overlay"></div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <!--/ single portfolio -->
-                                    <!-- Single Portfolio-->
-                                    <li class="single-port-item category-1 category-3 category-4" style="position: absolute; left: 379px; top: 274px;">
-                                        <a href="#portfolioModal" class="waves-effect waves-block waves-light modal-trigger" data-image-source="http://placehold.it/650x350" data-title="Your awesome portfolio title" data-content="A portfolio is a collection of documents and writing that you assemble in order to demonstrate that you have the appropriate prior." data-demo-link="#">
-                                            <div class="protfolio-image">
-                                                <img src="{% static 'images/pf5.jpg' %}" alt="portfolio">
-                                                <div class="protfolio-content waves-effect waves-block waves-light">
-                                                    <div class="protfolio-content__inner">
-                                                        <h2 class="p-title">item name</h2>
-                                                    </div>
-                                                </div>
-                                                <div class="p-overlay"></div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <!--/ single portfolio -->
+                                            </a>
+                                        </li>
+                                    {% endfor %}                                  
                                 </ul>
                                 <!-- portfolio load more button-->
-                                <a id="portfolio-item-loader" href="#" class="btn-floating btn-large waves-effect waves-light brand-bg"><i class="mdi-content-add"></i></a>
+                                <a href="{% url 'vista_cursos_talleres' %}" class="btn-floating btn-large waves-effect waves-light brand-bg">
+                                    <i class="mdi-content-add"></i>
+                                </a>
                             </div>
                         </div>
                     </div>

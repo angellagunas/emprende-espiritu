@@ -61,10 +61,21 @@ class Curso(models.Model):
         semanas = SemanaCurso.objects.filter(curso=self)
         return semanas
 
+    @property
+    def get_comentarios(self):
+        comentarios = ComentarioCurso.objects.filter(curso=self)
+        return comentarios
+
+    @property
+    def get_likes(self):
+        likes = LikeCurso.objects.filter(curso=self).count()
+        return likes
+
     class Meta:
         ordering = ['fecha_creacion']
         verbose_name = u'Curso'
         verbose_name_plural = u'Cursos'
+
 
 class SemanaCurso(models.Model):
     """semanas que tendra un curso"""
@@ -87,7 +98,8 @@ class SemanaCurso(models.Model):
         return archivos
 
     def __unicode__(self):
-        return "%s del curso %s"%(self.nombre, self.curso.nombre)
+        return "%s del curso %s" % (self.nombre, self.curso.nombre)
+
 
 class ArchivoSemana(models.Model):
     """docstring for ArchivoSemana"""
@@ -145,6 +157,7 @@ class ComentarioCurso(models.Model):
     def __unicode__(self):
         return self.comentario
 
+
 class LikeCurso(models.Model):
     """docstring for LikeTaller"""
     author = models.ForeignKey(
@@ -161,4 +174,38 @@ class LikeCurso(models.Model):
         on_delete=models.PROTECT,
         null=False,
         blank=False
+    )
+
+
+class SuscripcionCurso(models.Model):
+    """docstring for SuscripcionCurso"""
+    usuario = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        verbose_name=_('user'),
+        on_delete=models.PROTECT,
+        null=False,
+        blank=False
+    )
+
+    curso = models.ForeignKey(
+        Curso,
+        verbose_name=_('curso'),
+        on_delete=models.PROTECT,
+        null=False,
+        blank=False
+    )
+
+    is_request = models.BooleanField(
+        default=True
+    )
+
+    is_paid = models.BooleanField(
+        default=False
+    )
+
+    fecha_creacion = models.DateField(
+        blank=False,
+        null=False,
+        auto_now=False,
+        auto_now_add=True
     )
